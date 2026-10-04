@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "varclock: the market's variance calendar from S&P 500 option chains"
+abstract: "Model-free daily variance calendar and event variance read from one S&P 500 option-chain snapshot: a tested rebuild of the Cboe volatility-index methodology, a forward-variance strip over daily expirations and a variance clock with event, weekend and base terms."
+authors:
+  - family-names: Majores
+    given-names: Alexander
+repository-code: "https://github.com/Thesimpleex/varclock"
+license: MIT
+version: 0.1.0
+date-released: "2026-10-04"

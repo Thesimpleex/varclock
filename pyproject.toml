@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "varclock"
+version = "0.1.0"
+description = "The market's variance calendar: how much volatility S&P 500 options price for every single trading day, event and weekend ahead, read model-free from one option-chain snapshot."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Alexander Majores" }]
+keywords = ["volatility", "variance", "options", "VIX", "model-free", "forward variance", "event risk", "quantitative finance"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Topic :: Office/Business :: Financial :: Investment",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "rich>=13.7",
+  "tzdata; sys_platform == 'win32'",
+]
+
+[project.optional-dependencies]
+yahoo = ["yfinance>=0.2.50"]
+plot = ["matplotlib>=3.8"]
+docs = ["matplotlib>=3.8", "playwright>=1.45", "yfinance>=0.2.50"]
+dev = ["pytest>=8.0", "ruff>=0.6", "matplotlib>=3.8"]
+
+[project.urls]
+Homepage = "https://github.com/Thesimpleex/varclock"
+Issues = "https://github.com/Thesimpleex/varclock/issues"
+
+[project.scripts]
+varclock = "varclock.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/varclock"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "C4", "SIM", "NPY", "PT", "RUF"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["varclock"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = ["slow: long-running statistical tests"]
