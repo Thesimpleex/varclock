@@ -1,0 +1,153 @@
+{
+  "snapshots": {
+    "cboe": {
+      "source": "cboe",
+      "symbol": "SPX",
+      "valuation_time_et": "2026-10-02T16:15:00-04:00",
+      "downloaded_utc": "2026-10-04T00:25:08.301472+00:00",
+      "spot": 7722.7202,
+      "n_expiries": 60,
+      "provider_timestamp": "2026-10-03 22:26:08"
+    },
+    "yahoo": {
+      "source": "yahoo",
+      "symbol": "SPX",
+      "valuation_time_et": "2026-10-02T16:00:00-04:00",
+      "downloaded_utc": "2026-10-04T00:25:38.557479+00:00",
+      "spot": 7722.72021484375,
+      "n_expiries": 56,
+      "provider_timestamp": null
+    }
+  },
+  "treasury_curve_date": "2026-10-01",
+  "official_closes": {
+    "VIX": 15.31,
+    "VIX9D": 12.06,
+    "VIX3M": 18.01,
+    "VIX1D": 10.76
+  },
+  "rebuilt": {
+    "cboe": {
+      "VIX": {
+        "value": 15.313149541934095,
+        "official": 15.31,
+        "error": 0.0031495419340945574,
+        "near": "SPXW 2026-10-30",
+        "next": "SPXW 2026-11-06",
+        "options_in_next_term": 167,
+        "forward_next": 7756.08486921484
+      },
+      "VIX9D": {
+        "value": 12.05742974001643,
+        "official": 12.06,
+        "error": -0.002570259983571077,
+        "near": "SPXW 2026-10-09",
+        "next": "SPX 2026-10-16",
+        "options_in_next_term": 453,
+        "forward_next": 7738.547826563438
+      },
+      "VIX3M": {
+        "value": 18.005187336975297,
+        "official": 18.01,
+        "error": -0.004812663024704733,
+        "near": "SPXW 2026-12-31",
+        "next": "SPX 2027-01-15",
+        "options_in_next_term": 402,
+        "forward_next": 7813.5832537259275
+      },
+      "VIX1D": {
+        "value": 10.764368920437327,
+        "official": 10.76,
+        "error": 0.004368920437327617,
+        "near": null,
+        "next": "SPXW 2026-10-05",
+        "options_in_next_term": 150,
+        "forward_next": 7729.399909202418
+      }
+    },
+    "yahoo": {
+      "VIX": {
+        "value": 15.409672782489695,
+        "official": 15.31,
+        "error": 0.09967278248969436,
+        "near": "SPXW 2026-10-30",
+        "next": "SPXW 2026-11-06",
+        "options_in_next_term": 126,
+        "forward_next": 7749.297283408936
+      },
+      "VIX9D": {
+        "value": 12.175723162213007,
+        "official": 12.06,
+        "error": 0.1157231622130066,
+        "near": "SPXW 2026-10-09",
+        "next": "SPX 2026-10-16",
+        "options_in_next_term": 215,
+        "forward_next": 7731.852775112393
+      },
+      "VIX3M": {
+        "value": 18.074655174890218,
+        "official": 18.01,
+        "error": 0.06465517489021622,
+        "near": "SPXW 2026-12-31",
+        "next": "SPX 2027-01-15",
+        "options_in_next_term": 263,
+        "forward_next": 7806.61914051329
+      },
+      "VIX1D": {
+        "value": 10.786043548842576,
+        "official": 10.76,
+        "error": 0.026043548842576314,
+        "near": null,
+        "next": "SPXW 2026-10-05",
+        "options_in_next_term": 117,
+        "forward_next": 7722.799654269738
+      }
+    }
+  },
+  "decomposition": {
+    "cboe_quotes_on_yahoo_strike_set": {
+      "VIX": {
+        "value": 15.307732651234533,
+        "error": -0.002267348765467858
+      },
+      "VIX9D": {
+        "value": 12.05689706339079,
+        "error": -0.0031029366092099053
+      },
+      "VIX3M": {
+        "value": 18.005281144181275,
+        "error": -0.004718855818726553
+      },
+      "VIX1D": {
+        "value": 10.761095418854287,
+        "error": 0.0010954188542875443
+      }
+    },
+    "yahoo_valued_at_1615": {
+      "VIX": {
+        "value": 15.413454123908949,
+        "error": 0.10345412390894815
+      },
+      "VIX9D": {
+        "value": 12.185612449338997,
+        "error": 0.1256124493389965
+      },
+      "VIX3M": {
+        "value": 18.076135159493067,
+        "error": 0.06613515949306503
+      },
+      "VIX1D": {
+        "value": 10.991478240539868,
+        "error": 0.2314782405398681
+      }
+    }
+  },
+  "strikes_in_first_spxw_expiry": {
+    "cboe": 237,
+    "yahoo": 208
+  },
+  "max_abs_error": {
+    "cboe": 0.004812663024704733,
+    "yahoo": 0.1157231622130066
+  }
+}

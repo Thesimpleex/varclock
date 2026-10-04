@@ -1,0 +1,685 @@
+{
+  "cboe": {
+    "snapshot": {
+      "source": "cboe",
+      "symbol": "SPX",
+      "valuation_time_et": "2026-10-02T16:15:00-04:00",
+      "downloaded_utc": "2026-10-04T00:25:08.301472+00:00",
+      "spot": 7722.7202,
+      "n_expiries": 60,
+      "provider_timestamp": "2026-10-03 22:26:08"
+    },
+    "expiries": [
+      {
+        "expiry": "2026-10-05",
+        "vol_mid": 0.0735312784506966,
+        "vol_lp": [
+          0.07267663449685194,
+          0.07441844936802886
+        ],
+        "vol_bid_ask": [
+          0.07247870558535241,
+          0.07456899528530316
+        ],
+        "width_ratio_lp_to_bid_ask": 0.833557249990589,
+        "widen_needed_index_points": 0.00714353921694851
+      },
+      {
+        "expiry": "2026-10-06",
+        "vol_mid": 0.09024218471182409,
+        "vol_lp": [
+          0.08937287675573195,
+          0.09108452751806113
+        ],
+        "vol_bid_ask": [
+          0.08895718974692114,
+          0.09150913722386537
+        ],
+        "width_ratio_lp_to_bid_ask": 0.6706901884104494,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 4.4727541123235644e-05,
+        "forward_variance_step_lp": [
+          4.194578887342648e-05,
+          4.7420504074136005e-05
+        ],
+        "forward_variance_step_bid_ask": [
+          4.0951814901022036e-05,
+          4.850326734544928e-05
+        ]
+      },
+      {
+        "expiry": "2026-10-07",
+        "vol_mid": 0.10135716212584617,
+        "vol_lp": [
+          0.10043426351326545,
+          0.1022648592329174
+        ],
+        "vol_bid_ask": [
+          0.09978876182299866,
+          0.10290166005581726
+        ],
+        "width_ratio_lp_to_bid_ask": 0.5880932059114192,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 5.1423507939657686e-05,
+        "forward_variance_step_lp": [
+          4.720818964093487e-05,
+          5.565678754870795e-05
+        ],
+        "forward_variance_step_bid_ask": [
+          4.459396562540903e-05,
+          5.825305025390634e-05
+        ]
+      },
+      {
+        "expiry": "2026-10-08",
+        "vol_mid": 0.10689433076343054,
+        "vol_lp": [
+          0.10576523249565704,
+          0.10800097231423504
+        ],
+        "vol_bid_ask": [
+          0.10541912465432819,
+          0.10834945341735044
+        ],
+        "width_ratio_lp_to_bid_ask": 0.7629570530021274,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 4.706850526195054e-05,
+        "forward_variance_step_lp": [
+          4.060168224723215e-05,
+          5.3516780401885455e-05
+        ],
+        "forward_variance_step_bid_ask": [
+          3.761624637626618e-05,
+          5.6520764147634825e-05
+        ]
+      },
+      {
+        "expiry": "2026-10-09",
+        "vol_mid": 0.11298348298721145,
+        "vol_lp": [
+          0.11202906802777962,
+          0.11375588707563777
+        ],
+        "vol_bid_ask": [
+          0.11168521572554695,
+          0.1142670006790282
+        ],
+        "width_ratio_lp_to_bid_ask": 0.6683518572720082,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 5.6943939019758896e-05,
+        "forward_variance_step_lp": [
+          4.892901957298523e-05,
+          6.423790253351491e-05
+        ],
+        "forward_variance_step_bid_ask": [
+          4.6218744894919615e-05,
+          6.766913314459818e-05
+        ]
+      },
+      {
+        "expiry": "2026-10-12",
+        "vol_mid": 0.10786695498175732,
+        "vol_lp": [
+          0.10656678074816357,
+          0.10917446588859142
+        ],
+        "vol_bid_ask": [
+          0.10634009368456093,
+          0.10937250307655816
+        ],
+        "width_ratio_lp_to_bid_ask": 0.8600525664833938,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 7.399369445897948e-05,
+        "forward_variance_step_lp": [
+          6.300951747539862e-05,
+          8.587296718509663e-05
+        ],
+        "forward_variance_step_bid_ask": [
+          5.945681944284349e-05,
+          8.853056947511558e-05
+        ]
+      },
+      {
+        "expiry": "2026-10-13",
+        "vol_mid": 0.11302430473969523,
+        "vol_lp": [
+          0.11183315311069172,
+          0.11435480862104568
+        ],
+        "vol_bid_ask": [
+          0.11152862782225814,
+          0.11450044585008048
+        ],
+        "width_ratio_lp_to_bid_ask": 0.8491193251932974,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 6.61774287761861e-05,
+        "forward_variance_step_lp": [
+          5.034639652146122e-05,
+          8.291653392866749e-05
+        ],
+        "forward_variance_step_bid_ask": [
+          4.71139107191186e-05,
+          8.524094683325345e-05
+        ]
+      },
+      {
+        "expiry": "2026-10-14",
+        "vol_mid": 0.12273258427764126,
+        "vol_lp": [
+          0.12132921731818366,
+          0.12408472323447321
+        ],
+        "vol_bid_ask": [
+          0.12114751796431511,
+          0.12429743914507078
+        ],
+        "width_ratio_lp_to_bid_ask": 0.8746751263047514,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 0.00011018130750389571,
+        "forward_variance_step_lp": [
+          8.982186419825844e-05,
+          0.00012920799736459987
+        ],
+        "forward_variance_step_bid_ask": [
+          8.737113387557554e-05,
+          0.00013299148113221594
+        ]
+      },
+      {
+        "expiry": "2026-10-15",
+        "vol_mid": 0.12696828768766652,
+        "vol_lp": [
+          0.12538325607375422,
+          0.12859071139292966
+        ],
+        "vol_bid_ask": [
+          0.12526098052624843,
+          0.12865293978094286
+        ],
+        "width_ratio_lp_to_bid_ask": 0.945829120419157,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 7.89091364856025e-05,
+        "forward_variance_step_lp": [
+          5.371204072823765e-05,
+          0.00010491553958991151
+        ],
+        "forward_variance_step_bid_ask": [
+          5.0885826916818085e-05,
+          0.00010693244605438696
+        ]
+      },
+      {
+        "expiry": "2026-10-16",
+        "vol_mid": 0.130744477559414,
+        "vol_lp": [
+          0.12963070424837406,
+          0.13178325311832023
+        ],
+        "vol_bid_ask": [
+          0.12926761172029494,
+          0.1322048462980812
+        ],
+        "width_ratio_lp_to_bid_ask": 0.7326848474358316,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 8.146636038841375e-05,
+        "forward_variance_step_lp": [
+          5.5595757974091775e-05,
+          0.00010615321934437372
+        ],
+        "forward_variance_step_bid_ask": [
+          5.1423120138075905e-05,
+          0.00011150960063875117
+        ]
+      },
+      {
+        "expiry": "2026-10-19",
+        "vol_mid": 0.12692053634579872,
+        "vol_lp": [
+          0.12562267785583736,
+          0.1283159134148485
+        ],
+        "vol_bid_ask": [
+          0.12548211212564603,
+          0.12834284019413483
+        ],
+        "width_ratio_lp_to_bid_ask": 0.9418725835481973,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 9.463723017483574e-05,
+        "forward_variance_step_lp": [
+          6.892857382789774e-05,
+          0.00012232989533567107
+        ],
+        "forward_variance_step_bid_ask": [
+          6.301992854848462e-05,
+          0.0001262545318011873
+        ]
+      },
+      {
+        "expiry": "2026-10-20",
+        "vol_mid": 0.1296016571544978,
+        "vol_lp": [
+          0.12816392474286434,
+          0.13095299920129708
+        ],
+        "vol_bid_ask": [
+          0.12811471589001278,
+          0.13107173092168006
+        ],
+        "width_ratio_lp_to_bid_ask": 0.942953045987848,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 7.803140861035291e-05,
+        "forward_variance_step_lp": [
+          4.318822783133669e-05,
+          0.00011064154954520955
+        ],
+        "forward_variance_step_bid_ask": [
+          4.2244981974053054e-05,
+          0.00011381783524665287
+        ]
+      },
+      {
+        "expiry": "2026-10-21",
+        "vol_mid": 0.13226510140059225,
+        "vol_lp": [
+          0.13097503080675452,
+          0.13361832304864815
+        ],
+        "vol_bid_ask": [
+          0.13086614376797895,
+          0.13364941643088668
+        ],
+        "width_ratio_lp_to_bid_ask": 0.9499858442489478,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 8.230467661818623e-05,
+        "forward_variance_step_lp": [
+          4.728293450328991e-05,
+          0.00011928916806391854
+        ],
+        "forward_variance_step_bid_ask": [
+          4.42662723709415e-05,
+          0.00012034308086543086
+        ]
+      },
+      {
+        "expiry": "2026-10-22",
+        "vol_mid": 0.13494800041006175,
+        "vol_lp": [
+          0.13350275820523383,
+          0.1363358386851662
+        ],
+        "vol_bid_ask": [
+          0.1334568537827835,
+          0.13642284928760573
+        ],
+        "width_ratio_lp_to_bid_ask": 0.9550415570136915,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 8.719097151619964e-05,
+        "forward_variance_step_lp": [
+          4.7224059441797195e-05,
+          0.00012547829011388956
+        ],
+        "forward_variance_step_bid_ask": [
+          4.612057116711965e-05,
+          0.0001282613718652794
+        ]
+      },
+      {
+        "expiry": "2026-10-23",
+        "vol_mid": 0.13741362155718467,
+        "vol_lp": [
+          0.1362141122815672,
+          0.13868650696073923
+        ],
+        "vol_bid_ask": [
+          0.13606067860691043,
+          0.13875337298944976
+        ],
+        "width_ratio_lp_to_bid_ask": 0.9184753793472655,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 8.851046485173521e-05,
+        "forward_variance_step_lp": [
+          4.901671086798842e-05,
+          0.00012996839725021303
+        ],
+        "forward_variance_step_bid_ask": [
+          4.5314589977757044e-05,
+          0.0001317063397257136
+        ]
+      }
+    ],
+    "mean_width_ratio": 0.8329559300379316,
+    "min_width_ratio": 0.5880932059114192,
+    "expiries_needing_widening": 1,
+    "max_widening_index_points": 0.00714353921694851
+  },
+  "yahoo": {
+    "snapshot": {
+      "source": "yahoo",
+      "symbol": "SPX",
+      "valuation_time_et": "2026-10-02T16:00:00-04:00",
+      "downloaded_utc": "2026-10-04T00:25:38.557479+00:00",
+      "spot": 7722.72021484375,
+      "n_expiries": 56,
+      "provider_timestamp": null
+    },
+    "expiries": [
+      {
+        "expiry": "2026-10-05",
+        "vol_mid": 0.0749522240788886,
+        "vol_lp": [
+          0.07411161586114645,
+          0.07597527436248863
+        ],
+        "vol_bid_ask": [
+          0.07365574302830387,
+          0.07622665746110295
+        ],
+        "width_ratio_lp_to_bid_ask": 0.7258900300907362,
+        "widen_needed_index_points": 0.00403265546394682
+      },
+      {
+        "expiry": "2026-10-06",
+        "vol_mid": 0.09115955996943302,
+        "vol_lp": [
+          0.08982123742771023,
+          0.0924721787044449
+        ],
+        "vol_bid_ask": [
+          0.08959911365635312,
+          0.0926937407791768
+        ],
+        "width_ratio_lp_to_bid_ask": 0.8566296810024194,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 4.4895215923744755e-05,
+        "forward_variance_step_lp": [
+          4.097175843510714e-05,
+          4.8566631563662366e-05
+        ],
+        "forward_variance_step_bid_ask": [
+          4.022053355873803e-05,
+          4.9569898288751494e-05
+        ]
+      },
+      {
+        "expiry": "2026-10-07",
+        "vol_mid": 0.10217187967514142,
+        "vol_lp": [
+          0.10056270266890524,
+          0.10375759905911637
+        ],
+        "vol_bid_ask": [
+          0.1002828029983604,
+          0.10402665723503372
+        ],
+        "width_ratio_lp_to_bid_ask": 0.8534162182833231,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 5.1932064346507564e-05,
+        "forward_variance_step_lp": [
+          4.482156302187956e-05,
+          5.905966586405853e-05
+        ],
+        "forward_variance_step_bid_ask": [
+          4.3601875527372354e-05,
+          6.0262253165642814e-05
+        ]
+      },
+      {
+        "expiry": "2026-10-08",
+        "vol_mid": 0.10800999469884964,
+        "vol_lp": [
+          0.1063870764485652,
+          0.10958244070488327
+        ],
+        "vol_bid_ask": [
+          0.10616680880487568,
+          0.10982225010388391
+        ],
+        "width_ratio_lp_to_bid_ask": 0.8740600360497255,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 4.8771202047439134e-05,
+        "forward_variance_step_lp": [
+          3.857825588787778e-05,
+          5.886460828674611e-05
+        ],
+        "forward_variance_step_bid_ask": [
+          3.70427963654526e-05,
+          6.049960772942564e-05
+        ]
+      },
+      {
+        "expiry": "2026-10-09",
+        "vol_mid": 0.11449514421527121,
+        "vol_lp": [
+          0.11290436574971326,
+          0.11597413478955021
+        ],
+        "vol_bid_ask": [
+          0.11262020766443406,
+          0.11633986815950609
+        ],
+        "width_ratio_lp_to_bid_ask": 0.8249880138168206,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 5.963565099467702e-05,
+        "forward_variance_step_lp": [
+          4.707370622569762e-05,
+          7.189243662919509e-05
+        ],
+        "forward_variance_step_bid_ask": [
+          4.4979776748990734e-05,
+          7.429152524036342e-05
+        ]
+      },
+      {
+        "expiry": "2026-10-12",
+        "vol_mid": 0.1088315900261756,
+        "vol_lp": [
+          0.106763731633397,
+          0.11081552038406436
+        ],
+        "vol_bid_ask": [
+          0.10655714543703351,
+          0.11105946484456886
+        ],
+        "width_ratio_lp_to_bid_ask": 0.8997791611425543,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 7.309365351815169e-05,
+        "forward_variance_step_lp": [
+          5.434231326462147e-05,
+          9.196993134930054e-05
+        ],
+        "forward_variance_step_bid_ask": [
+          5.150547389943096e-05,
+          9.468183313687245e-05
+        ]
+      },
+      {
+        "expiry": "2026-10-13",
+        "vol_mid": 0.1143161172248581,
+        "vol_lp": [
+          0.11213070245806599,
+          0.11649911241441954
+        ],
+        "vol_bid_ask": [
+          0.11191735912772684,
+          0.11666556493074731
+        ],
+        "width_ratio_lp_to_bid_ask": 0.9202014950705897,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 6.93336201501009e-05,
+        "forward_variance_step_lp": [
+          4.24806662773225e-05,
+          9.673296220258365e-05
+        ],
+        "forward_variance_step_bid_ask": [
+          3.955726219109632e-05,
+          9.910997810910543e-05
+        ]
+      },
+      {
+        "expiry": "2026-10-14",
+        "vol_mid": 0.12385483497000625,
+        "vol_lp": [
+          0.121571729273706,
+          0.1261284252257448
+        ],
+        "vol_bid_ask": [
+          0.12140030910366942,
+          0.12626165387966565
+        ],
+        "width_ratio_lp_to_bid_ask": 0.9374769414869418,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 0.00011049402880637627,
+        "forward_variance_step_lp": [
+          7.688698404484384e-05,
+          0.00014409401925474796
+        ],
+        "forward_variance_step_bid_ask": [
+          7.434801687365245e-05,
+          0.00014664004073909972
+        ]
+      },
+      {
+        "expiry": "2026-10-15",
+        "vol_mid": 0.12832383784552603,
+        "vol_lp": [
+          0.12595114337374796,
+          0.13076517628646728
+        ],
+        "vol_bid_ask": [
+          0.125721321774043,
+          0.1308746116334152
+        ],
+        "width_ratio_lp_to_bid_ask": 0.9346051993606179,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 8.216672308737909e-05,
+        "forward_variance_step_lp": [
+          4.1992934038059815e-05,
+          0.00012311693966249315
+        ],
+        "forward_variance_step_bid_ask": [
+          3.8827388621425147e-05,
+          0.0001255060575533333
+        ]
+      },
+      {
+        "expiry": "2026-10-19",
+        "vol_mid": 0.12804479367025162,
+        "vol_lp": [
+          0.12555583848730298,
+          0.1304300359398774
+        ],
+        "vol_bid_ask": [
+          0.12555553621047844,
+          0.130486572868682
+        ],
+        "width_ratio_lp_to_bid_ask": 0.9882560743344818,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 0.0001771284397005785,
+        "forward_variance_step_lp": [
+          0.0001252018042472436,
+          0.00022733130399099633
+        ],
+        "forward_variance_step_bid_ask": [
+          0.00012417847624698246,
+          0.00023007840315417442
+        ]
+      },
+      {
+        "expiry": "2026-10-20",
+        "vol_mid": 0.1304481616834197,
+        "vol_lp": [
+          0.12816770726064128,
+          0.13270865288405737
+        ],
+        "vol_bid_ask": [
+          0.12809175946991333,
+          0.1327627467668136
+        ],
+        "width_ratio_lp_to_bid_ask": 0.9722411487724885,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 7.555626245350842e-05,
+        "forward_variance_step_lp": [
+          1.775725654895588e-05,
+          0.00013429038924706038
+        ],
+        "forward_variance_step_bid_ask": [
+          1.6110417289125515e-05,
+          0.00013500210761789155
+        ]
+      },
+      {
+        "expiry": "2026-10-21",
+        "vol_mid": 0.13317348760987022,
+        "vol_lp": [
+          0.13083716851165714,
+          0.13544787272889608
+        ],
+        "vol_bid_ask": [
+          0.1308323881078662,
+          0.1354741371123846
+        ],
+        "width_ratio_lp_to_bid_ask": 0.9932316998116462,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 8.40201815968327e-05,
+        "forward_variance_step_lp": [
+          2.257635811886427e-05,
+          0.00014490711503778453
+        ],
+        "forward_variance_step_bid_ask": [
+          2.1803060435331037e-05,
+          0.00014623730275833426
+        ]
+      },
+      {
+        "expiry": "2026-10-22",
+        "vol_mid": 0.136008465897832,
+        "vol_lp": [
+          0.13343550604832832,
+          0.1385193585167199
+        ],
+        "vol_bid_ask": [
+          0.1334287216024202,
+          0.1385401813312922
+        ],
+        "width_ratio_lp_to_bid_ask": 0.9945476091035067,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 9.040459637338577e-05,
+        "forward_variance_step_lp": [
+          2.061448542078903e-05,
+          0.0001602830823530521
+        ],
+        "forward_variance_step_bid_ask": [
+          2.0144877448122125e-05,
+          0.00016066431529864974
+        ]
+      },
+      {
+        "expiry": "2026-10-23",
+        "vol_mid": 0.1384690232252281,
+        "vol_lp": [
+          0.13657166912942012,
+          0.1404359922068439
+        ],
+        "vol_bid_ask": [
+          0.1363846982484511,
+          0.14052243546699747
+        ],
+        "width_ratio_lp_to_bid_ask": 0.9342608693345409,
+        "widen_needed_index_points": 0.0,
+        "forward_variance_step": 8.953704749120389e-05,
+        "forward_variance_step_lp": [
+          2.174242001928839e-05,
+          0.0001590875083892218
+        ],
+        "forward_variance_step_bid_ask": [
+          1.849004760711196e-05,
+          0.00016058404737529528
+        ]
+      }
+    ],
+    "mean_width_ratio": 0.9078274412614565,
+    "min_width_ratio": 0.7258900300907362,
+    "expiries_needing_widening": 1,
+    "max_widening_index_points": 0.00403265546394682
+  }
+}

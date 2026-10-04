@@ -1,0 +1,231 @@
+{
+  "period": [
+    "2022-05-16",
+    "2026-10-02"
+  ],
+  "last_vix1d_close": "2026-10-02",
+  "last_spx_close": "2026-10-02",
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 0,
+    "interval": "95% percentile",
+    "event_days": "independent resampling of event days",
+    "ordinary_days": "circular block bootstrap, blocks of 20 sessions"
+  },
+  "events": {
+    "CPI": {
+      "n": 51,
+      "implied_var": 0.0002028128432525274,
+      "implied_var_lo": 0.00014768551079382373,
+      "implied_var_hi": 0.00026566069916052833,
+      "realised_var": 0.00021576421915845426,
+      "realised_var_lo": 9.609137982258122e-05,
+      "realised_var_hi": 0.00037330815945253254,
+      "premium_var": -1.2951375905926914e-05,
+      "premium_var_lo": -0.00014771678334453143,
+      "premium_var_hi": 9.191310450611558e-05,
+      "z_squared": 0.8294921119623402,
+      "z_squared_lo": 0.5332260434793284,
+      "z_squared_hi": 1.1810972750769453,
+      "realised_abs": 0.00974257643626511,
+      "realised_abs_lo": 0.0069788288670717905,
+      "realised_abs_hi": 0.012957222432491141,
+      "implied_abs": 0.010250460974743913,
+      "implied_abs_lo": 0.008991822334724665,
+      "implied_abs_hi": 0.011656264246338184,
+      "ratio": 1.0638587561725603,
+      "ratio_lo": 0.5360430438065045,
+      "ratio_hi": 1.7091582783607222,
+      "implied_sd_mean": 0.01284704765364737,
+      "share_exceeding_implied_sd": 0.27450980392156865,
+      "implied_multiple": 1.836852343158618,
+      "implied_multiple_95pct": [
+        1.238822332439769,
+        2.6472318384793954
+      ],
+      "realised_multiple": 2.259824814898615,
+      "realised_multiple_95pct": [
+        0.9731121277829836,
+        4.273886198970865
+      ],
+      "after_weekend_or_holiday": 0,
+      "premium_pct_sq": -0.12951375905926912,
+      "premium_pct_sq_95pct": [
+        -1.4771678334453142,
+        0.9191310450611558
+      ]
+    },
+    "FOMC": {
+      "n": 35,
+      "implied_var": 0.00016815766725455618,
+      "implied_var_lo": 0.00012417544640547579,
+      "implied_var_hi": 0.0002207222003611321,
+      "realised_var": 0.0001455413499781498,
+      "realised_var_lo": 8.449111496769043e-05,
+      "realised_var_hi": 0.00021824949049555702,
+      "premium_var": 2.2616317276406362e-05,
+      "premium_var_lo": -5.3519438776235906e-05,
+      "premium_var_hi": 8.961457821240573e-05,
+      "z_squared": 1.1282157062409823,
+      "z_squared_lo": 0.5487087331995462,
+      "z_squared_hi": 2.0030580120992645,
+      "realised_abs": 0.00930172861248312,
+      "realised_abs_lo": 0.00685449451195103,
+      "realised_abs_hi": 0.0119346930497423,
+      "implied_abs": 0.009642114918520127,
+      "implied_abs_lo": 0.008471052145162899,
+      "implied_abs_hi": 0.01094722200087879,
+      "ratio": 0.8655052865227375,
+      "ratio_lo": 0.5145304745236502,
+      "ratio_hi": 1.3488989210506575,
+      "implied_sd_mean": 0.012084598941001964,
+      "share_exceeding_implied_sd": 0.2857142857142857,
+      "implied_multiple": 1.522984443011942,
+      "implied_multiple_95pct": [
+        1.0417175016821865,
+        2.2001178140861914
+      ],
+      "realised_multiple": 1.5243396498143595,
+      "realised_multiple_95pct": [
+        0.828322722692688,
+        2.5645254617387705
+      ],
+      "after_weekend_or_holiday": 0,
+      "premium_pct_sq": 0.2261631727640636,
+      "premium_pct_sq_95pct": [
+        -0.5351943877623591,
+        0.8961457821240573
+      ]
+    },
+    "NFP": {
+      "n": 52,
+      "implied_var": 0.00015084769852575407,
+      "implied_var_lo": 0.00012467517251447111,
+      "implied_var_hi": 0.0001793769140027925,
+      "realised_var": 0.00020112116146352884,
+      "realised_var_lo": 9.685899736525332e-05,
+      "realised_var_hi": 0.00036923679481480495,
+      "premium_var": -5.027346293777477e-05,
+      "premium_var_lo": -0.0002046793369180653,
+      "premium_var_hi": 4.535660335973947e-05,
+      "z_squared": 1.1993447174776362,
+      "z_squared_lo": 0.656356917048814,
+      "z_squared_hi": 2.011185995459047,
+      "realised_abs": 0.010178232806003568,
+      "realised_abs_lo": 0.007791403091030954,
+      "realised_abs_hi": 0.013056017142475194,
+      "implied_abs": 0.009288398005734149,
+      "implied_abs_lo": 0.008469073133926874,
+      "implied_abs_hi": 0.010144014975563057,
+      "ratio": 1.3332729861250858,
+      "ratio_lo": 0.6959894448093807,
+      "ratio_hi": 2.314172542342616,
+      "implied_sd_mean": 0.011641280533599708,
+      "share_exceeding_implied_sd": 0.28846153846153844,
+      "implied_multiple": 1.3662100686203127,
+      "implied_multiple_95pct": [
+        1.0158291637938788,
+        1.8451246610102316
+      ],
+      "realised_multiple": 2.1064595105212325,
+      "realised_multiple_95pct": [
+        0.940288303815072,
+        4.160561460419462
+      ],
+      "after_weekend_or_holiday": 4,
+      "premium_pct_sq": -0.5027346293777477,
+      "premium_pct_sq_95pct": [
+        -2.046793369180653,
+        0.45356603359739467
+      ]
+    },
+    "CPI or FOMC (unique days)": {
+      "n": 85,
+      "implied_var": 0.00018945628650966556,
+      "implied_var_lo": 0.00015044838268319678,
+      "implied_var_hi": 0.0002327642400819587,
+      "realised_var": 0.0001885437649748114,
+      "realised_var_lo": 0.00011017676868036475,
+      "realised_var_hi": 0.00028630279371368375,
+      "premium_var": 9.125215348542054e-07,
+      "premium_var_lo": -8.326451837643288e-05,
+      "premium_var_hi": 7.15170444108735e-05,
+      "z_squared": 0.9555164027448977,
+      "z_squared_lo": 0.6371437347169054,
+      "z_squared_hi": 1.3575171922057268,
+      "realised_abs": 0.009576049088406436,
+      "realised_abs_lo": 0.007603147536950014,
+      "realised_abs_hi": 0.011821542760885187,
+      "implied_abs": 0.01001553140714055,
+      "implied_abs_lo": 0.009118610027433378,
+      "implied_abs_hi": 0.011014693860010397,
+      "ratio": 0.9951834718622145,
+      "ratio_lo": 0.6281849829601237,
+      "ratio_hi": 1.4457987129775332,
+      "implied_sd_mean": 0.012552607105296655,
+      "share_exceeding_implied_sd": 0.2823529411764706,
+      "implied_multiple": 1.715883561516378,
+      "implied_multiple_95pct": [
+        1.240430073603114,
+        2.3585581214717415
+      ],
+      "realised_multiple": 1.9747290836558347,
+      "realised_multiple_95pct": [
+        1.0796335882576757,
+        3.327645576028738
+      ],
+      "after_weekend_or_holiday": 0,
+      "premium_pct_sq": 0.009125215348542054,
+      "premium_pct_sq_95pct": [
+        -0.8326451837643288,
+        0.715170444108735
+      ]
+    }
+  },
+  "ordinary_days": {
+    "n": 963,
+    "implied_var": 0.00011041325341577217,
+    "implied_var_lo": 8.704902240473962e-05,
+    "implied_var_hi": 0.00013929484605041135,
+    "realised_var": 9.547829448369623e-05,
+    "realised_var_lo": 7.025619643053931e-05,
+    "realised_var_hi": 0.0001283429012026272,
+    "premium_var": 1.4934958932075931e-05,
+    "premium_var_lo": 6.002248646909899e-06,
+    "premium_var_hi": 2.3140492774222562e-05,
+    "z_squared": 0.8623834715820885,
+    "z_squared_lo": 0.7957907755295023,
+    "z_squared_hi": 0.933445301712845,
+    "ratio": 0.8647358132285364,
+    "ratio_lo": 0.7760944226728694,
+    "ratio_hi": 0.9507413945438922,
+    "implied_sd_mean": 0.009553013004771712,
+    "premium_pct_sq": 0.1493495893207593,
+    "premium_pct_sq_95pct": [
+      0.060022486469098996,
+      0.23140492774222562
+    ],
+    "bootstrap_sensitivity": {
+      "premium_pct_sq_95pct_by_block_length": {
+        "block_1": [
+          -0.040585366508332464,
+          0.3114719981960008
+        ],
+        "block_5": [
+          0.03195413805364393,
+          0.25252299644702897
+        ],
+        "block_20": [
+          0.060260701592771186,
+          0.23318211965790742
+        ],
+        "block_60": [
+          0.06709652000886182,
+          0.22614469134797413
+        ]
+      },
+      "premium_lag1_autocorrelation": -0.24218718916483523,
+      "note": "block_1 is the plain bootstrap of days; the premium series is negatively autocorrelated (implied variance reacts to the previous day's realised move), so resampling blocks gives a narrower interval than resampling single days"
+    }
+  }
+}

@@ -1,0 +1,3644 @@
+{
+  "generated_utc": "2026-10-04T02:19:56+00:00",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "pandas": "3.0.6",
+    "yfinance": "1.7.0",
+    "rich": "15.0.0",
+    "varclock": "0.1.0"
+  },
+  "data_vintage": {
+    "option_snapshots": {
+      "cboe": {
+        "source": "cboe",
+        "symbol": "SPX",
+        "valuation_time_et": "2026-10-02T16:15:00-04:00",
+        "downloaded_utc": "2026-10-04T00:25:08.301472+00:00",
+        "spot": 7722.7202,
+        "n_expiries": 60,
+        "provider_timestamp": "2026-10-03 22:26:08"
+      },
+      "yahoo": {
+        "source": "yahoo",
+        "symbol": "SPX",
+        "valuation_time_et": "2026-10-02T16:00:00-04:00",
+        "downloaded_utc": "2026-10-04T00:25:38.557479+00:00",
+        "spot": 7722.72021484375,
+        "n_expiries": 56,
+        "provider_timestamp": null
+      }
+    },
+    "treasury_curve_date": "2026-10-01",
+    "official_index_history_last_observation": {
+      "VIX": "2026-10-02",
+      "VIX9D": "2026-10-02",
+      "VIX3M": "2026-10-02",
+      "VIX1D": "2026-10-02",
+      "SPX": "2026-10-02"
+    },
+    "event_calendars": "src/varclock/calendars/*.csv (sources and retrieval in each file)"
+  },
+  "validation": {
+    "golden_vix_sample": {
+      "minutes": [
+        34484,
+        44954
+      ],
+      "sigma2_near": 0.01923390648253804,
+      "sigma2_next": 0.019423884281709432,
+      "abs_error_sigma2": [
+        4.825380407746938e-10,
+        2.8170943355831923e-10
+      ],
+      "forward": [
+        1962.89995637313,
+        1962.4000591124573
+      ],
+      "abs_error_forward": [
+        3.626870011430583e-06,
+        8.87542682903586e-07
+      ],
+      "index_value": 13.927842350985376,
+      "printed_index_value": 13.927842,
+      "abs_error_index": 3.50985375874302e-07,
+      "max_abs_error_strike_contribution": [
+        4.9249006112010355e-11,
+        4.9919253003580835e-11
+      ],
+      "strikes_matched": [
+        146,
+        122
+      ]
+    },
+    "golden_vix1d_sample": {
+      "minutes": [
+        300,
+        705
+      ],
+      "sigma2_near": 0.013089728959923988,
+      "sigma2_next": 0.0191545675830257,
+      "abs_error_sigma2": [
+        8.95992398851353e-09,
+        2.416974297786423e-09
+      ],
+      "forward": [
+        4002.9999976682684,
+        4004.0499974190725
+      ],
+      "abs_error_forward": [
+        3.317313712614123e-07,
+        4.19072421209421e-07
+      ],
+      "index_value": 12.580464921908588,
+      "printed_index_value": 12.58046,
+      "abs_error_index": 4.9219085873630775e-06
+    },
+    "black_scholes_limit": {
+      "true_total_variance": 0.004,
+      "by_spacing": [
+        {
+          "strike_spacing": 4.0,
+          "error": 0.0002665388288254642
+        },
+        {
+          "strike_spacing": 2.0,
+          "error": 6.665866920484934e-05
+        },
+        {
+          "strike_spacing": 1.0,
+          "error": 1.6666166706336485e-05
+        },
+        {
+          "strike_spacing": 0.5,
+          "error": 4.166635417282918e-06
+        },
+        {
+          "strike_spacing": 0.25,
+          "error": 1.0416647135517987e-06
+        }
+      ],
+      "error_ratio_per_halving": [
+        3.9985621075986586,
+        3.9996401319750197,
+        3.99991000825423,
+        3.9999775005105085
+      ]
+    },
+    "heston_convergence": {
+      "parameters": {
+        "v0": 0.04,
+        "kappa": 2.0,
+        "theta": 0.06,
+        "xi": 0.5,
+        "rho": -0.7
+      },
+      "T_years": 0.0821917808219178,
+      "expected_integrated_variance": 0.0034156722435189297,
+      "by_spacing": [
+        {
+          "strike_spacing": 2.0,
+          "replicated": 0.00348233091272401,
+          "error": 6.66586692050805e-05
+        },
+        {
+          "strike_spacing": 1.0,
+          "replicated": 0.003432338410225338,
+          "error": 1.6666166706408476e-05
+        },
+        {
+          "strike_spacing": 0.5,
+          "replicated": 0.0034198388789363,
+          "error": 4.166635417370522e-06
+        },
+        {
+          "strike_spacing": 0.25,
+          "replicated": 0.0034167139082326584,
+          "error": 1.0416647137287405e-06
+        }
+      ],
+      "error_ratio_per_halving": [
+        3.9996401319716126,
+        3.9999100081874097,
+        3.999977499915154
+      ]
+    },
+    "clock_recovery": {
+      "truth": {
+        "base": 9e-05,
+        "weekend": 2e-05,
+        "event_variance": 0.00011
+      },
+      "from_exact_totals": {
+        "max_rel_error_session_variance": 8.881784197001252e-16,
+        "event_variance_rel_error": 1.7763568394002505e-15,
+        "weekend_rel_error": 2.220446049250313e-15
+      },
+      "from_black76_chains": {
+        "event_variance_rel_error": 4.5438104058215245e-05,
+        "weekend_rel_error": 0.0005376770525291619,
+        "base_rel_error_first_ten": 1.8691100673096095e-05
+      }
+    },
+    "truncated_chains": {
+      "truth_weekend_ratio": 0.10256410256410257,
+      "by_tick": {
+        "0.05": {
+          "own": {
+            "max_rel_error_cumulative_variance": 0.006358920373009114,
+            "weekend_ratio": 0.10174778866532572,
+            "weekend_ratio_rel_error": -0.007959060513074379
+          },
+          "common": {
+            "max_rel_error_cumulative_variance": 0.04290148848139064,
+            "weekend_ratio": 0.13838480727990843,
+            "weekend_ratio_rel_error": 0.34925187097910704
+          }
+        },
+        "0.1": {
+          "own": {
+            "max_rel_error_cumulative_variance": 0.015199979455949642,
+            "weekend_ratio": 0.09678436994596369,
+            "weekend_ratio_rel_error": -0.05635239302685413
+          },
+          "common": {
+            "max_rel_error_cumulative_variance": 0.06893692352364178,
+            "weekend_ratio": 0.1623728282893947,
+            "weekend_ratio_rel_error": 0.5831350758215981
+          }
+        },
+        "0.3": {
+          "own": {
+            "max_rel_error_cumulative_variance": 0.06010052417901035,
+            "weekend_ratio": 0.07334638551080425,
+            "weekend_ratio_rel_error": -0.28487274126965867
+          },
+          "common": {
+            "max_rel_error_cumulative_variance": 0.15407206541622365,
+            "weekend_ratio": 0.21793007332219702,
+            "weekend_ratio_rel_error": 1.1248182148914205
+          }
+        }
+      }
+    }
+  },
+  "replication": {
+    "snapshots": {
+      "cboe": {
+        "source": "cboe",
+        "symbol": "SPX",
+        "valuation_time_et": "2026-10-02T16:15:00-04:00",
+        "downloaded_utc": "2026-10-04T00:25:08.301472+00:00",
+        "spot": 7722.7202,
+        "n_expiries": 60,
+        "provider_timestamp": "2026-10-03 22:26:08"
+      },
+      "yahoo": {
+        "source": "yahoo",
+        "symbol": "SPX",
+        "valuation_time_et": "2026-10-02T16:00:00-04:00",
+        "downloaded_utc": "2026-10-04T00:25:38.557479+00:00",
+        "spot": 7722.72021484375,
+        "n_expiries": 56,
+        "provider_timestamp": null
+      }
+    },
+    "treasury_curve_date": "2026-10-01",
+    "official_closes": {
+      "VIX": 15.31,
+      "VIX9D": 12.06,
+      "VIX3M": 18.01,
+      "VIX1D": 10.76
+    },
+    "rebuilt": {
+      "cboe": {
+        "VIX": {
+          "value": 15.313149541934095,
+          "official": 15.31,
+          "error": 0.0031495419340945574,
+          "near": "SPXW 2026-10-30",
+          "next": "SPXW 2026-11-06",
+          "options_in_next_term": 167,
+          "forward_next": 7756.08486921484
+        },
+        "VIX9D": {
+          "value": 12.05742974001643,
+          "official": 12.06,
+          "error": -0.002570259983571077,
+          "near": "SPXW 2026-10-09",
+          "next": "SPX 2026-10-16",
+          "options_in_next_term": 453,
+          "forward_next": 7738.547826563438
+        },
+        "VIX3M": {
+          "value": 18.005187336975297,
+          "official": 18.01,
+          "error": -0.004812663024704733,
+          "near": "SPXW 2026-12-31",
+          "next": "SPX 2027-01-15",
+          "options_in_next_term": 402,
+          "forward_next": 7813.5832537259275
+        },
+        "VIX1D": {
+          "value": 10.764368920437327,
+          "official": 10.76,
+          "error": 0.004368920437327617,
+          "near": null,
+          "next": "SPXW 2026-10-05",
+          "options_in_next_term": 150,
+          "forward_next": 7729.399909202418
+        }
+      },
+      "yahoo": {
+        "VIX": {
+          "value": 15.409672782489695,
+          "official": 15.31,
+          "error": 0.09967278248969436,
+          "near": "SPXW 2026-10-30",
+          "next": "SPXW 2026-11-06",
+          "options_in_next_term": 126,
+          "forward_next": 7749.297283408936
+        },
+        "VIX9D": {
+          "value": 12.175723162213007,
+          "official": 12.06,
+          "error": 0.1157231622130066,
+          "near": "SPXW 2026-10-09",
+          "next": "SPX 2026-10-16",
+          "options_in_next_term": 215,
+          "forward_next": 7731.852775112393
+        },
+        "VIX3M": {
+          "value": 18.074655174890218,
+          "official": 18.01,
+          "error": 0.06465517489021622,
+          "near": "SPXW 2026-12-31",
+          "next": "SPX 2027-01-15",
+          "options_in_next_term": 263,
+          "forward_next": 7806.61914051329
+        },
+        "VIX1D": {
+          "value": 10.786043548842576,
+          "official": 10.76,
+          "error": 0.026043548842576314,
+          "near": null,
+          "next": "SPXW 2026-10-05",
+          "options_in_next_term": 117,
+          "forward_next": 7722.799654269738
+        }
+      }
+    },
+    "decomposition": {
+      "cboe_quotes_on_yahoo_strike_set": {
+        "VIX": {
+          "value": 15.307732651234533,
+          "error": -0.002267348765467858
+        },
+        "VIX9D": {
+          "value": 12.05689706339079,
+          "error": -0.0031029366092099053
+        },
+        "VIX3M": {
+          "value": 18.005281144181275,
+          "error": -0.004718855818726553
+        },
+        "VIX1D": {
+          "value": 10.761095418854287,
+          "error": 0.0010954188542875443
+        }
+      },
+      "yahoo_valued_at_1615": {
+        "VIX": {
+          "value": 15.413454123908949,
+          "error": 0.10345412390894815
+        },
+        "VIX9D": {
+          "value": 12.185612449338997,
+          "error": 0.1256124493389965
+        },
+        "VIX3M": {
+          "value": 18.076135159493067,
+          "error": 0.06613515949306503
+        },
+        "VIX1D": {
+          "value": 10.991478240539868,
+          "error": 0.2314782405398681
+        }
+      }
+    },
+    "strikes_in_first_spxw_expiry": {
+      "cboe": 237,
+      "yahoo": 208
+    },
+    "max_abs_error": {
+      "cboe": 0.004812663024704733,
+      "yahoo": 0.1157231622130066
+    }
+  },
+  "calendar": {
+    "cboe": {
+      "snapshot": {
+        "source": "cboe",
+        "symbol": "SPX",
+        "valuation_time_et": "2026-10-02T16:15:00-04:00",
+        "downloaded_utc": "2026-10-04T00:25:08.301472+00:00",
+        "spot": 7722.7202,
+        "n_expiries": 60,
+        "provider_timestamp": "2026-10-03 22:26:08"
+      },
+      "treasury_curve_date": "2026-10-01",
+      "n_expiries": 27,
+      "first_expiry": "2026-10-05",
+      "last_expiry": "2026-11-10",
+      "skipped_expiries": [],
+      "calendar_arbitrage": {
+        "negative_forward_variances": 0,
+        "negative_beyond_quote_band": 0
+      },
+      "strip": [
+        {
+          "expiry": "2026-10-05",
+          "minutes": 4305,
+          "rate": 0.03959871863396735,
+          "forward": 7729.399805365146,
+          "total_variance": 4.428554901085739e-05,
+          "cumulative": 4.42855490108574e-05,
+          "cumulative_band": 1.2882888337885498e-06,
+          "increment": 4.42855490108574e-05,
+          "increment_band": 1.2882888337885498e-06,
+          "relative_band": 0.029090501587158885,
+          "options_used": 150
+        },
+        {
+          "expiry": "2026-10-06",
+          "minutes": 5745,
+          "rate": 0.03962159439489315,
+          "forward": 7729.799913365541,
+          "total_variance": 8.901309013409304e-05,
+          "cumulative": 8.901309013409304e-05,
+          "cumulative_band": 2.5652193736613835e-06,
+          "increment": 4.4727541123235644e-05,
+          "increment_band": 3.853508207449933e-06,
+          "relative_band": 0.08615515431158058,
+          "options_used": 186
+        },
+        {
+          "expiry": "2026-10-07",
+          "minutes": 7185,
+          "rate": 0.03964446989417132,
+          "forward": 7730.550298149721,
+          "total_variance": 0.00014043659807375073,
+          "cumulative": 0.00014043659807375073,
+          "cumulative_band": 4.317211163142515e-06,
+          "increment": 5.1423507939657686e-05,
+          "increment_band": 6.882430536803899e-06,
+          "relative_band": 0.13383821548852728,
+          "options_used": 202
+        },
+        {
+          "expiry": "2026-10-08",
+          "minutes": 8625,
+          "rate": 0.039667345131808696,
+          "forward": 7731.400911604109,
+          "total_variance": 0.00018750510333570127,
+          "cumulative": 0.00018750510333570127,
+          "cumulative_band": 5.149039139715788e-06,
+          "increment": 4.706850526195054e-05,
+          "increment_band": 9.466250302858302e-06,
+          "relative_band": 0.20111644187925112,
+          "options_used": 207
+        },
+        {
+          "expiry": "2026-10-09",
+          "minutes": 10065,
+          "rate": 0.03969022010781084,
+          "forward": 7733.999239661497,
+          "total_variance": 0.00024444904235546017,
+          "cumulative": 0.00024444904235546017,
+          "cumulative_band": 5.612331332977392e-06,
+          "increment": 5.6943939019758896e-05,
+          "increment_band": 1.076137047269318e-05,
+          "relative_band": 0.1889818417542051,
+          "options_used": 234
+        },
+        {
+          "expiry": "2026-10-12",
+          "minutes": 14385,
+          "rate": 0.039758843466064855,
+          "forward": 7734.048965696087,
+          "total_variance": 0.00031844273681443965,
+          "cumulative": 0.00031844273681443965,
+          "cumulative_band": 9.012387934211856e-06,
+          "increment": 7.399369445897948e-05,
+          "increment_band": 1.462471926718925e-05,
+          "relative_band": 0.19764818305290704,
+          "options_used": 182
+        },
+        {
+          "expiry": "2026-10-13",
+          "minutes": 15825,
+          "rate": 0.039781717395585475,
+          "forward": 7734.7497003791605,
+          "total_variance": 0.00038462016559062575,
+          "cumulative": 0.00038462016559062575,
+          "cumulative_band": 1.0183808036533625e-05,
+          "increment": 6.61774287761861e-05,
+          "increment_band": 1.919619597074548e-05,
+          "relative_band": 0.2900716501946237,
+          "options_used": 183
+        },
+        {
+          "expiry": "2026-10-14",
+          "minutes": 17265,
+          "rate": 0.039804591063501,
+          "forward": 7735.600785017965,
+          "total_variance": 0.0004948014730945215,
+          "cumulative": 0.0004948014730945215,
+          "cumulative_band": 1.2708046098051485e-05,
+          "increment": 0.00011018130750389571,
+          "increment_band": 2.289185413458511e-05,
+          "relative_band": 0.20776531567095186,
+          "options_used": 183
+        },
+        {
+          "expiry": "2026-10-15",
+          "minutes": 18705,
+          "rate": 0.0398274644698172,
+          "forward": 7735.9012765426805,
+          "total_variance": 0.000573710609580124,
+          "cumulative": 0.000573710609580124,
+          "cumulative_band": 1.533738631883867e-05,
+          "increment": 7.89091364856025e-05,
+          "increment_band": 2.8045432416890157e-05,
+          "relative_band": 0.3554142608315988,
+          "options_used": 184
+        },
+        {
+          "expiry": "2026-10-16",
+          "minutes": 20145,
+          "rate": 0.03985033761453963,
+          "forward": 7738.597860049823,
+          "total_variance": 0.0006551769699685377,
+          "cumulative": 0.0006551769699685377,
+          "cumulative_band": 1.4778148552230294e-05,
+          "increment": 8.146636038841375e-05,
+          "increment_band": 3.0115534871068964e-05,
+          "relative_band": 0.3696683481069326,
+          "options_used": 437
+        },
+        {
+          "expiry": "2026-10-19",
+          "minutes": 24465,
+          "rate": 0.03991895547920752,
+          "forward": 7739.398884103728,
+          "total_variance": 0.0007498142001433735,
+          "cumulative": 0.0007498142001433735,
+          "cumulative_band": 1.6973038995083907e-05,
+          "increment": 9.463723017483574e-05,
+          "increment_band": 3.17511875473142e-05,
+          "relative_band": 0.33550419310303226,
+          "options_used": 159
+        },
+        {
+          "expiry": "2026-10-20",
+          "minutes": 25905,
+          "rate": 0.03994182757761661,
+          "forward": 7740.200394106605,
+          "total_variance": 0.0008278456087537264,
+          "cumulative": 0.0008278456087537264,
+          "cumulative_band": 1.889106912837811e-05,
+          "increment": 7.803140861035291e-05,
+          "increment_band": 3.5864108123462014e-05,
+          "relative_band": 0.45961118429308606,
+          "options_used": 159
+        },
+        {
+          "expiry": "2026-10-21",
+          "minutes": 27345,
+          "rate": 0.03996469941446206,
+          "forward": 7741.052185445571,
+          "total_variance": 0.0009101502853719126,
+          "cumulative": 0.0009101502853719126,
+          "cumulative_band": 1.9170717123347386e-05,
+          "increment": 8.230467661818623e-05,
+          "increment_band": 3.80617862517255e-05,
+          "relative_band": 0.4624498608784434,
+          "options_used": 157
+        },
+        {
+          "expiry": "2026-10-22",
+          "minutes": 28785,
+          "rate": 0.03998757098975049,
+          "forward": 7741.854055862842,
+          "total_variance": 0.0009973412568881122,
+          "cumulative": 0.0009973412568881122,
+          "cumulative_band": 2.195316134308675e-05,
+          "increment": 8.719097151619964e-05,
+          "increment_band": 4.1123878466434136e-05,
+          "relative_band": 0.4716529446950081,
+          "options_used": 155
+        },
+        {
+          "expiry": "2026-10-23",
+          "minutes": 30225,
+          "rate": 0.040010442303487236,
+          "forward": 7744.548963435017,
+          "total_variance": 0.0010858517217398474,
+          "cumulative": 0.0010858517217398474,
+          "cumulative_band": 2.136055031182546e-05,
+          "increment": 8.851046485173521e-05,
+          "increment_band": 4.331371165491221e-05,
+          "relative_band": 0.48936260505994916,
+          "options_used": 207
+        },
+        {
+          "expiry": "2026-10-26",
+          "minutes": 34545,
+          "rate": 0.04007905467544808,
+          "forward": 7745.013188319118,
+          "total_variance": 0.001204349146130105,
+          "cumulative": 0.001204349146130105,
+          "cumulative_band": 2.5327518445612473e-05,
+          "increment": 0.00011849742439025749,
+          "increment_band": 4.668806875743793e-05,
+          "relative_band": 0.3940007050590079,
+          "options_used": 128
+        },
+        {
+          "expiry": "2026-10-27",
+          "minutes": 35985,
+          "rate": 0.04010192494303836,
+          "forward": 7745.8887277255335,
+          "total_variance": 0.0012923365662027297,
+          "cumulative": 0.0012923365662027297,
+          "cumulative_band": 2.6071090787158063e-05,
+          "increment": 8.798742007262478e-05,
+          "increment_band": 5.139860923277054e-05,
+          "relative_band": 0.5841586125646843,
+          "options_used": 127
+        },
+        {
+          "expiry": "2026-10-28",
+          "minutes": 37425,
+          "rate": 0.040124794949107506,
+          "forward": 7746.640415165115,
+          "total_variance": 0.001457764711898899,
+          "cumulative": 0.001457764711898899,
+          "cumulative_band": 3.140333954228526e-05,
+          "increment": 0.00016542814569616934,
+          "increment_band": 5.747443032944333e-05,
+          "relative_band": 0.3474283658779729,
+          "options_used": 128
+        },
+        {
+          "expiry": "2026-10-29",
+          "minutes": 38865,
+          "rate": 0.04014766469366108,
+          "forward": 7747.542715923661,
+          "total_variance": 0.0016017278336469879,
+          "cumulative": 0.0016017278336469879,
+          "cumulative_band": 3.153232154961003e-05,
+          "increment": 0.00014396312174808881,
+          "increment_band": 6.293566109189529e-05,
+          "relative_band": 0.4371651595748395,
+          "options_used": 126
+        },
+        {
+          "expiry": "2026-10-30",
+          "minutes": 40305,
+          "rate": 0.040170534176704624,
+          "forward": 7749.84953722327,
+          "total_variance": 0.0017375847612845447,
+          "cumulative": 0.0017375847612845447,
+          "cumulative_band": 3.039184362056136e-05,
+          "increment": 0.00013585692763755678,
+          "increment_band": 6.192416517017139e-05,
+          "relative_band": 0.45580425118529505,
+          "options_used": 477
+        },
+        {
+          "expiry": "2026-11-02",
+          "minutes": 44685,
+          "rate": 0.0402442192951513,
+          "forward": 7751.0535986729665,
+          "total_variance": 0.001889396534474945,
+          "cumulative": 0.001889396534474945,
+          "cumulative_band": 5.4460279482215234e-05,
+          "increment": 0.00015181177319040034,
+          "increment_band": 8.48521231027766e-05,
+          "relative_band": 0.558929793912335,
+          "options_used": 108
+        },
+        {
+          "expiry": "2026-11-03",
+          "minutes": 46125,
+          "rate": 0.04026958425245791,
+          "forward": 7751.9067263487195,
+          "total_variance": 0.001984539954172993,
+          "cumulative": 0.001984539954172993,
+          "cumulative_band": 5.457288620187777e-05,
+          "increment": 9.514341969804781e-05,
+          "increment_band": 0.000109033165684093,
+          "relative_band": 1.1459874579884393,
+          "options_used": 108
+        },
+        {
+          "expiry": "2026-11-04",
+          "minutes": 47565,
+          "rate": 0.04029489788034614,
+          "forward": 7752.9607769606955,
+          "total_variance": 0.0021630007546436176,
+          "cumulative": 0.0021630007546436176,
+          "cumulative_band": 6.513774587187412e-05,
+          "increment": 0.00017846080047062476,
+          "increment_band": 0.00011971063207375189,
+          "relative_band": 0.670795108830954,
+          "options_used": 109
+        },
+        {
+          "expiry": "2026-11-05",
+          "minutes": 49005,
+          "rate": 0.04032014317839743,
+          "forward": 7753.764123910209,
+          "total_variance": 0.0022653959353333103,
+          "cumulative": 0.0022653959353333103,
+          "cumulative_band": 5.777145283438262e-05,
+          "increment": 0.00010239518068969273,
+          "increment_band": 0.00012290919870625673,
+          "relative_band": 1.2003416359870633,
+          "options_used": 108
+        },
+        {
+          "expiry": "2026-11-06",
+          "minutes": 50445,
+          "rate": 0.04034530314704637,
+          "forward": 7756.08486921484,
+          "total_variance": 0.00240220574441956,
+          "cumulative": 0.00240220574441956,
+          "cumulative_band": 5.122082362227995e-05,
+          "increment": 0.0001368098090862497,
+          "increment_band": 0.00010899227645666258,
+          "relative_band": 0.7966700427741261,
+          "options_used": 167
+        },
+        {
+          "expiry": "2026-11-09",
+          "minutes": 54765,
+          "rate": 0.040420101093561374,
+          "forward": 7756.427010956216,
+          "total_variance": 0.0025558224309481727,
+          "cumulative": 0.0025558224309481727,
+          "cumulative_band": 6.936382807751004e-05,
+          "increment": 0.0001536166865286127,
+          "increment_band": 0.00012058465169979,
+          "relative_band": 0.7849710498561617,
+          "options_used": 70
+        },
+        {
+          "expiry": "2026-11-10",
+          "minutes": 56205,
+          "rate": 0.04044474976573289,
+          "forward": 7757.733374284547,
+          "total_variance": 0.002676314738099207,
+          "cumulative": 0.002676314738099207,
+          "cumulative_band": 8.850442383488495e-05,
+          "increment": 0.00012049230715103446,
+          "increment_band": 0.000157868251912395,
+          "relative_band": 1.3101936185395688,
+          "options_used": 66
+        }
+      ],
+      "fit": {
+        "family": "meanrev",
+        "kappa_per_session": 0.05,
+        "chi2_per_dof": 0.14293244094768512,
+        "base_vol_first_session": 0.09857192462102914,
+        "base_vol_last_session": 0.1705423263949342,
+        "weekend_in_base_sessions": 0.07428798084097211,
+        "weekend_in_base_sessions_90pct": [
+          0.041146659738323814,
+          0.11805125320323315
+        ]
+      },
+      "events": [
+        {
+          "key": "CPI 2026-10-14",
+          "label": "Consumer Price Index for September 2026",
+          "session": "2026-10-14",
+          "extra_variance": 4.891723907601802e-05,
+          "extra_variance_90pct": [
+            3.608126209012888e-05,
+            6.040684715038276e-05
+          ],
+          "extra_variance_pct_sq": 0.4891723907601802,
+          "extra_variance_pct_sq_90pct": [
+            0.3608126209012888,
+            0.6040684715038276
+          ],
+          "multiple_of_base": 1.7012478832330848,
+          "multiple_90pct": [
+            1.5075032314342902,
+            1.8798467146428104
+          ],
+          "implied_one_sd_move": 0.01089378966735612
+        },
+        {
+          "key": "FOMC 2026-10-28",
+          "label": "FOMC statement",
+          "session": "2026-10-28",
+          "extra_variance": 6.558462218400428e-05,
+          "extra_variance_90pct": [
+            3.206240466012413e-05,
+            9.874858223871857e-05
+          ],
+          "extra_variance_pct_sq": 0.6558462218400428,
+          "extra_variance_pct_sq_90pct": [
+            0.3206240466012413,
+            0.9874858223871856
+          ],
+          "multiple_of_base": 1.6621247128544583,
+          "multiple_90pct": [
+            1.3196372735715884,
+            2.0377814793516933
+          ],
+          "implied_one_sd_move": 0.01283107120547419
+        },
+        {
+          "key": "ELECTION 2026-11-04",
+          "label": "U.S. general election 2026 (reaction session follows)",
+          "session": "2026-11-04",
+          "extra_variance": 8.63335752193959e-05,
+          "extra_variance_90pct": [
+            3.2742387131778185e-05,
+            0.00013585736609363753
+          ],
+          "extra_variance_pct_sq": 0.863335752193959,
+          "extra_variance_pct_sq_90pct": [
+            0.32742387131778183,
+            1.3585736609363752
+          ],
+          "multiple_of_base": 1.791757148112393,
+          "multiple_90pct": [
+            1.274687950203342,
+            2.33656815727089
+          ],
+          "implied_one_sd_move": 0.013977626760157475
+        },
+        {
+          "key": "NFP 2026-11-06",
+          "label": "Employment Situation for October 2026",
+          "session": "2026-11-06",
+          "extra_variance": 2.8728797480239556e-05,
+          "extra_variance_90pct": [
+            0.0,
+            8.11570970817877e-05
+          ],
+          "extra_variance_pct_sq": 0.28728797480239554,
+          "extra_variance_pct_sq_90pct": [
+            0.0,
+            0.811570970817877
+          ],
+          "multiple_of_base": 1.255623423994579,
+          "multiple_90pct": [
+            1.0,
+            1.773648529622756
+          ],
+          "implied_one_sd_move": 0.011879224898597442
+        },
+        {
+          "key": "CPI 2026-11-10",
+          "label": "Consumer Price Index for October 2026",
+          "session": "2026-11-10",
+          "extra_variance": 1.7456122373755264e-05,
+          "extra_variance_90pct": [
+            0.0,
+            0.00010557109770094336
+          ],
+          "extra_variance_pct_sq": 0.17456122373755265,
+          "extra_variance_pct_sq_90pct": [
+            0.0,
+            1.0557109770094335
+          ],
+          "multiple_of_base": 1.1512460191417584,
+          "multiple_90pct": [
+            1.0,
+            1.945461142867457
+          ],
+          "implied_one_sd_move": 0.011526991776100134
+        },
+        {
+          "key": "EARNINGS per name",
+          "label": "TSLA, GOOGL, LLY, META, MSFT, AAPL, AMZN, BRK-B",
+          "session": "2026-10-22",
+          "extra_variance": 1.2956159892720684e-05,
+          "extra_variance_90pct": [
+            5.3182659117100034e-06,
+            2.038596084763099e-05
+          ],
+          "extra_variance_pct_sq": 0.12956159892720684,
+          "extra_variance_pct_sq_90pct": [
+            0.05318265911710003,
+            0.2038596084763099
+          ],
+          "multiple_of_base": 1.1454867760361604,
+          "multiple_90pct": [
+            1.058635097192099,
+            1.2350844375210202
+          ],
+          "implied_one_sd_move": 0.010100001293667529
+        }
+      ],
+      "sessions": [
+        {
+          "session": "2026-10-05",
+          "fwd_vol": 0.10610543172623918,
+          "fwd_vol_90pct": [
+            0.10483608547492124,
+            0.10731834665358235
+          ],
+          "base_vol": 0.09857192462102914,
+          "multiple": 1.158694007896446,
+          "multiple_90pct": [
+            1.0866394249810758,
+            1.2584841681154981
+          ],
+          "strip_vol": 0.1056407040431673,
+          "weekend": true,
+          "events": []
+        },
+        {
+          "session": "2026-10-06",
+          "fwd_vol": 0.1049519032503527,
+          "fwd_vol_90pct": [
+            0.10312151773851796,
+            0.10657171249832245
+          ],
+          "base_vol": 0.1049519032503527,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.10616656895207352,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-07",
+          "fwd_vol": 0.11067995376261282,
+          "fwd_vol_90pct": [
+            0.10973163560113719,
+            0.11181244454145924
+          ],
+          "base_vol": 0.11067995376261282,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.11383639137285465,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-08",
+          "fwd_vol": 0.11586614410320879,
+          "fwd_vol_90pct": [
+            0.11500641616887224,
+            0.11695521538522942
+          ],
+          "base_vol": 0.11586614410320879,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.1089094271677688,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-09",
+          "fwd_vol": 0.12059259280391454,
+          "fwd_vol_90pct": [
+            0.11953247253698342,
+            0.12193370060914173
+          ],
+          "base_vol": 0.12059259280391454,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.11979095388625655,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-12",
+          "fwd_vol": 0.13094890362293646,
+          "fwd_vol_90pct": [
+            0.1278643316172942,
+            0.134746634320674
+          ],
+          "base_vol": 0.12492268425602834,
+          "multiple": 1.098806243022615,
+          "multiple_90pct": [
+            1.0563613150895088,
+            1.1470574415052015
+          ],
+          "strip_vol": 0.1365518619560452,
+          "weekend": true,
+          "events": []
+        },
+        {
+          "session": "2026-10-13",
+          "fwd_vol": 0.12890668124569696,
+          "fwd_vol_90pct": [
+            0.12753396509661594,
+            0.13047163653900862
+          ],
+          "base_vol": 0.12890668124569696,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.12913834462156815,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-14",
+          "fwd_vol": 0.17293354976921604,
+          "fwd_vol_90pct": [
+            0.16433800865688775,
+            0.18037399589373468
+          ],
+          "base_vol": 0.13258532493690764,
+          "multiple": 1.7012478832330848,
+          "multiple_90pct": [
+            1.5075032314342902,
+            1.8798467146428104
+          ],
+          "strip_vol": 0.16663039785999947,
+          "weekend": false,
+          "events": [
+            "CPI"
+          ]
+        },
+        {
+          "session": "2026-10-15",
+          "fwd_vol": 0.13599224293729228,
+          "fwd_vol_90pct": [
+            0.13461975792462832,
+            0.13743877055177664
+          ],
+          "base_vol": 0.13599224293729228,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.14101454674738997,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-16",
+          "fwd_vol": 0.13915561703445492,
+          "fwd_vol_90pct": [
+            0.13774689840773408,
+            0.14057127786381038
+          ],
+          "base_vol": 0.13915561703445492,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.1432812716927103,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-19",
+          "fwd_vol": 0.14742513350415481,
+          "fwd_vol_90pct": [
+            0.14459595160226693,
+            0.15030499985941967
+          ],
+          "base_vol": 0.14209937251937504,
+          "multiple": 1.0763629470722686,
+          "multiple_90pct": [
+            1.0435810080669217,
+            1.1152305708724222
+          ],
+          "strip_vol": 0.15442986111519563,
+          "weekend": true,
+          "events": []
+        },
+        {
+          "session": "2026-10-20",
+          "fwd_vol": 0.14484404782264748,
+          "fwd_vol_90pct": [
+            0.143042941648985,
+            0.1465331324950063
+          ],
+          "base_vol": 0.14484404782264748,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.1402280819586752,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-21",
+          "fwd_vol": 0.14740744430492958,
+          "fwd_vol_90pct": [
+            0.14516834212395507,
+            0.1493675971701763
+          ],
+          "base_vol": 0.14740744430492958,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.14401659108513482,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-22",
+          "fwd_vol": 0.16033254998684954,
+          "fwd_vol_90pct": [
+            0.15553434893503568,
+            0.1649029980913239
+          ],
+          "base_vol": 0.1498051210483807,
+          "multiple": 1.1454867760361604,
+          "multiple_90pct": [
+            1.058635097192099,
+            1.2350844375210202
+          ],
+          "strip_vol": 0.14822997275207975,
+          "weekend": false,
+          "events": [
+            "earnings x1"
+          ]
+        },
+        {
+          "session": "2026-10-23",
+          "fwd_vol": 0.15205077795724417,
+          "fwd_vol_90pct": [
+            0.14870020579613638,
+            0.15490082676571076
+          ],
+          "base_vol": 0.15205077795724417,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.14934737072555804,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-26",
+          "fwd_vol": 0.15907916999131247,
+          "fwd_vol_90pct": [
+            0.15595181639613623,
+            0.16203930888761275
+          ],
+          "base_vol": 0.15415655680770485,
+          "multiple": 1.06488480415687,
+          "multiple_90pct": [
+            1.0364754611996527,
+            1.1014177154368627
+          ],
+          "strip_vol": 0.17280437189592424,
+          "weekend": true,
+          "events": []
+        },
+        {
+          "session": "2026-10-27",
+          "fwd_vol": 0.15613328097724485,
+          "fwd_vol_90pct": [
+            0.15162418301433866,
+            0.16002796882389056
+          ],
+          "base_vol": 0.15613328097724485,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.14890543931737835,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-28",
+          "fwd_vol": 0.2036869407854787,
+          "fwd_vol_90pct": [
+            0.18287403627893709,
+            0.22263445429702208
+          ],
+          "base_vol": 0.15799064863522155,
+          "multiple": 1.6621247128544583,
+          "multiple_90pct": [
+            1.3196372735715884,
+            2.0377814793516933
+          ],
+          "strip_vol": 0.20417613160072035,
+          "weekend": false,
+          "events": [
+            "FOMC"
+          ]
+        },
+        {
+          "session": "2026-10-29",
+          "fwd_vol": 0.19640733940974983,
+          "fwd_vol_90pct": [
+            0.17897546750751603,
+            0.21244551714031304
+          ],
+          "base_vol": 0.1597373901193901,
+          "multiple": 1.511827554122454,
+          "multiple_90pct": [
+            1.2006138150024752,
+            1.8510254762128564
+          ],
+          "strip_vol": 0.19046970016388007,
+          "weekend": false,
+          "events": [
+            "earnings x4"
+          ]
+        },
+        {
+          "session": "2026-10-30",
+          "fwd_vol": 0.18048229833843746,
+          "fwd_vol_90pct": [
+            0.17228407937216197,
+            0.18858626829474912
+          ],
+          "base_vol": 0.16138139740253063,
+          "multiple": 1.250726300161488,
+          "multiple_90pct": [
+            1.0976882228882099,
+            1.4191874727807179
+          ],
+          "strip_vol": 0.18502958078281512,
+          "weekend": false,
+          "events": [
+            "earnings x2"
+          ]
+        },
+        {
+          "session": "2026-11-02",
+          "fwd_vol": 0.16759495317538467,
+          "fwd_vol_90pct": [
+            0.16202192985720432,
+            0.17325803523156721
+          ],
+          "base_vol": 0.16292983155807175,
+          "multiple": 1.0580852394547662,
+          "multiple_90pct": [
+            1.031723691104132,
+            1.0941387408283814
+          ],
+          "strip_vol": 0.1955928599003064,
+          "weekend": true,
+          "events": []
+        },
+        {
+          "session": "2026-11-03",
+          "fwd_vol": 0.16438921269970688,
+          "fwd_vol_90pct": [
+            0.15632404694157984,
+            0.17174142059396835
+          ],
+          "base_vol": 0.16438921269970688,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.15484231257607867,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-11-04",
+          "fwd_vol": 0.22188794595754888,
+          "fwd_vol_90pct": [
+            0.19443244762448544,
+            0.24536696592942975
+          ],
+          "base_vol": 0.1657654958245906,
+          "multiple": 1.791757148112393,
+          "multiple_90pct": [
+            1.274687950203342,
+            2.33656815727089
+          ],
+          "strip_vol": 0.2120663144363042,
+          "weekend": false,
+          "events": [
+            "Election reaction"
+          ]
+        },
+        {
+          "session": "2026-11-05",
+          "fwd_vol": 0.16706413521739022,
+          "fwd_vol_90pct": [
+            0.15755746159716277,
+            0.1758637066728344
+          ],
+          "base_vol": 0.16706413521739022,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.16063494493354355,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-11-06",
+          "fwd_vol": 0.18857684909937183,
+          "fwd_vol_90pct": [
+            0.16376613889013011,
+            0.21954645566062106
+          ],
+          "base_vol": 0.1682901394949416,
+          "multiple": 1.255623423994579,
+          "multiple_90pct": [
+            1.0,
+            1.773648529622756
+          ],
+          "strip_vol": 0.185677332730021,
+          "weekend": false,
+          "events": [
+            "Jobs report"
+          ]
+        },
+        {
+          "session": "2026-11-09",
+          "fwd_vol": 0.18308346627079028,
+          "fwd_vol_90pct": [
+            0.17669632410406805,
+            0.19012427734869924
+          ],
+          "base_vol": 0.16944811893451117,
+          "multiple": 1.1674135998708186,
+          "multiple_90pct": [
+            1.0843258660388448,
+            1.268995492670029
+          ],
+          "strip_vol": 0.19675214104352307,
+          "weekend": true,
+          "events": [
+            "earnings x1"
+          ]
+        },
+        {
+          "session": "2026-11-10",
+          "fwd_vol": 0.1829853216254861,
+          "fwd_vol_90pct": [
+            0.16366721413844143,
+            0.235192416121181
+          ],
+          "base_vol": 0.1705423263949342,
+          "multiple": 1.1512460191417584,
+          "multiple_90pct": [
+            1.0,
+            1.945461142867457
+          ],
+          "strip_vol": 0.1742528662664138,
+          "weekend": false,
+          "events": [
+            "CPI"
+          ]
+        }
+      ],
+      "bootstrap": {
+        "draws": 1000,
+        "seed": 0,
+        "level": 0.9,
+        "quote_correlation": 0.5
+      },
+      "strike_coverage": "own",
+      "notes": []
+    },
+    "yahoo": {
+      "snapshot": {
+        "source": "yahoo",
+        "symbol": "SPX",
+        "valuation_time_et": "2026-10-02T16:00:00-04:00",
+        "downloaded_utc": "2026-10-04T00:25:38.557479+00:00",
+        "spot": 7722.72021484375,
+        "n_expiries": 56,
+        "provider_timestamp": null
+      },
+      "treasury_curve_date": "2026-10-01",
+      "n_expiries": 21,
+      "first_expiry": "2026-10-05",
+      "last_expiry": "2026-11-04",
+      "skipped_expiries": [
+        {
+          "expiry": "2026-10-16",
+          "reason": "K0 = 7725 has no valid call and put quote"
+        },
+        {
+          "expiry": "2026-10-29",
+          "reason": "K0 = 7740 has no valid call and put quote"
+        }
+      ],
+      "calendar_arbitrage": {
+        "negative_forward_variances": 0,
+        "negative_beyond_quote_band": 0
+      },
+      "strip": [
+        {
+          "expiry": "2026-10-05",
+          "minutes": 4320,
+          "rate": 0.03959871863396735,
+          "forward": 7722.799283851839,
+          "total_variance": 4.6173993652372006e-05,
+          "cumulative": 4.6173993652372006e-05,
+          "cumulative_band": 1.6211553009176047e-06,
+          "increment": 4.6173993652372006e-05,
+          "increment_band": 1.6211553009176047e-06,
+          "relative_band": 0.03510970511068895,
+          "options_used": 117
+        },
+        {
+          "expiry": "2026-10-06",
+          "minutes": 5760,
+          "rate": 0.03962159439489315,
+          "forward": 7723.199218253635,
+          "total_variance": 9.106920957611677e-05,
+          "cumulative": 9.106920957611676e-05,
+          "cumulative_band": 3.1340769146280255e-06,
+          "increment": 4.4895215923744755e-05,
+          "increment_band": 4.75523221554563e-06,
+          "relative_band": 0.10591846186066838,
+          "options_used": 150
+        },
+        {
+          "expiry": "2026-10-07",
+          "minutes": 7200,
+          "rate": 0.03964446989417132,
+          "forward": 7723.999456777578,
+          "total_variance": 0.00014300127392262432,
+          "cumulative": 0.00014300127392262432,
+          "cumulative_band": 5.306217469766078e-06,
+          "increment": 5.1932064346507564e-05,
+          "increment_band": 8.440294384394104e-06,
+          "relative_band": 0.16252568602083145,
+          "options_used": 169
+        },
+        {
+          "expiry": "2026-10-08",
+          "minutes": 8640,
+          "rate": 0.039667345131808696,
+          "forward": 7724.749836930353,
+          "total_variance": 0.00019177247597006346,
+          "cumulative": 0.00019177247597006346,
+          "cumulative_band": 6.561105884586308e-06,
+          "increment": 4.8771202047439134e-05,
+          "increment_band": 1.1867323354352385e-05,
+          "relative_band": 0.24332644790688548,
+          "options_used": 162
+        },
+        {
+          "expiry": "2026-10-09",
+          "minutes": 10080,
+          "rate": 0.03969022010781084,
+          "forward": 7727.451865606587,
+          "total_variance": 0.0002514081269647405,
+          "cumulative": 0.0002514081269647405,
+          "cumulative_band": 8.203548852027221e-06,
+          "increment": 5.963565099467702e-05,
+          "increment_band": 1.476465473661353e-05,
+          "relative_band": 0.24758101052558976,
+          "options_used": 215
+        },
+        {
+          "expiry": "2026-10-12",
+          "minutes": 14400,
+          "rate": 0.039758843466064855,
+          "forward": 7727.452670198325,
+          "total_variance": 0.00032450178048289217,
+          "cumulative": 0.00032450178048289217,
+          "cumulative_band": 1.347512509615032e-05,
+          "increment": 7.309365351815169e-05,
+          "increment_band": 2.1678673948177544e-05,
+          "relative_band": 0.2965876366105298,
+          "options_used": 156
+        },
+        {
+          "expiry": "2026-10-13",
+          "minutes": 15840,
+          "rate": 0.039781717395585475,
+          "forward": 7728.097720721921,
+          "total_variance": 0.0003938354006329931,
+          "cumulative": 0.0003938354006329931,
+          "cumulative_band": 1.6437875674631008e-05,
+          "increment": 6.93336201501009e-05,
+          "increment_band": 2.991300077078133e-05,
+          "relative_band": 0.4314357263622242,
+          "options_used": 158
+        },
+        {
+          "expiry": "2026-10-14",
+          "minutes": 17280,
+          "rate": 0.039804591063501,
+          "forward": 7729.098821449335,
+          "total_variance": 0.0005043294294393693,
+          "cumulative": 0.0005043294294393693,
+          "cumulative_band": 1.9873820748644772e-05,
+          "increment": 0.00011049402880637627,
+          "increment_band": 3.6311696423275776e-05,
+          "relative_band": 0.3286303958280535,
+          "options_used": 154
+        },
+        {
+          "expiry": "2026-10-15",
+          "minutes": 18720,
+          "rate": 0.0398274644698172,
+          "forward": 7729.2990063367015,
+          "total_variance": 0.0005864961525267484,
+          "cumulative": 0.0005864961525267484,
+          "cumulative_band": 2.369232733420227e-05,
+          "increment": 8.216672308737909e-05,
+          "increment_band": 4.3566148082847047e-05,
+          "relative_band": 0.5302164482879184,
+          "options_used": 141
+        },
+        {
+          "expiry": "2026-10-19",
+          "minutes": 24480,
+          "rate": 0.03991895547920752,
+          "forward": 7732.905396808589,
+          "total_variance": 0.0007636245922273268,
+          "cumulative": 0.0007636245922273269,
+          "cumulative_band": 2.9499347811322732e-05,
+          "increment": 0.0001771284397005785,
+          "increment_band": 5.3191675145525e-05,
+          "relative_band": 0.30030002655384586,
+          "options_used": 125
+        },
+        {
+          "expiry": "2026-10-20",
+          "minutes": 25920,
+          "rate": 0.03994182757761661,
+          "forward": 7733.707295198104,
+          "total_variance": 0.0008391808546808354,
+          "cumulative": 0.0008391808546808354,
+          "cumulative_band": 3.0168257583624338e-05,
+          "increment": 7.555626245350842e-05,
+          "increment_band": 5.9667605394947074e-05,
+          "relative_band": 0.7897109181606485,
+          "options_used": 121
+        },
+        {
+          "expiry": "2026-10-21",
+          "minutes": 27360,
+          "rate": 0.03996469941446206,
+          "forward": 7734.459267212462,
+          "total_variance": 0.0009232010362776681,
+          "cumulative": 0.0009232010362776681,
+          "cumulative_band": 3.2345198703457974e-05,
+          "increment": 8.40201815968327e-05,
+          "increment_band": 6.251345628708231e-05,
+          "relative_band": 0.7440290546746315,
+          "options_used": 118
+        },
+        {
+          "expiry": "2026-10-22",
+          "minutes": 28800,
+          "rate": 0.03998757098975049,
+          "forward": 7735.33980021573,
+          "total_variance": 0.0010136056326510538,
+          "cumulative": 0.0010136056326510538,
+          "cumulative_band": 3.8292512815389015e-05,
+          "increment": 9.040459637338577e-05,
+          "increment_band": 7.063771151884698e-05,
+          "relative_band": 0.7813508864870286,
+          "options_used": 116
+        },
+        {
+          "expiry": "2026-10-23",
+          "minutes": 30240,
+          "rate": 0.040010442303487236,
+          "forward": 7737.845045062223,
+          "total_variance": 0.0011031426801422577,
+          "cumulative": 0.0011031426801422577,
+          "cumulative_band": 3.3157867782791075e-05,
+          "increment": 8.953704749120389e-05,
+          "increment_band": 7.145038059818009e-05,
+          "relative_band": 0.7979979528049478,
+          "options_used": 170
+        },
+        {
+          "expiry": "2026-10-26",
+          "minutes": 34560,
+          "rate": 0.04007905467544808,
+          "forward": 7738.496041784025,
+          "total_variance": 0.0012221395529903368,
+          "cumulative": 0.0012221395529903368,
+          "cumulative_band": 4.410412248935207e-05,
+          "increment": 0.00011899687284807909,
+          "increment_band": 7.726199027214314e-05,
+          "relative_band": 0.6492774845502198,
+          "options_used": 107
+        },
+        {
+          "expiry": "2026-10-27",
+          "minutes": 36000,
+          "rate": 0.04010192494303836,
+          "forward": 7739.197799613725,
+          "total_variance": 0.0013054506017522735,
+          "cumulative": 0.0013054506017522738,
+          "cumulative_band": 4.2006156942303545e-05,
+          "increment": 8.331104876193695e-05,
+          "increment_band": 8.611027943165562e-05,
+          "relative_band": 1.033599753109789,
+          "options_used": 88
+        },
+        {
+          "expiry": "2026-10-28",
+          "minutes": 37440,
+          "rate": 0.040124794949107506,
+          "forward": 7740.1002862293135,
+          "total_variance": 0.0014753150681298085,
+          "cumulative": 0.0014753150681298085,
+          "cumulative_band": 4.792210579192558e-05,
+          "increment": 0.00016986446637753472,
+          "increment_band": 8.992826273422912e-05,
+          "relative_band": 0.5294118578888521,
+          "options_used": 80
+        },
+        {
+          "expiry": "2026-10-30",
+          "minutes": 40320,
+          "rate": 0.040170534176704624,
+          "forward": 7743.29475324213,
+          "total_variance": 0.001767349239015195,
+          "cumulative": 0.001767349239015195,
+          "cumulative_band": 5.488789391249319e-05,
+          "increment": 0.0002920341708853866,
+          "increment_band": 0.00010280999970441877,
+          "relative_band": 0.3520478421847701,
+          "options_used": 476
+        },
+        {
+          "expiry": "2026-11-02",
+          "minutes": 44700,
+          "rate": 0.0402442192951513,
+          "forward": 7744.330629200739,
+          "total_variance": 0.0019329858153084671,
+          "cumulative": 0.0019329858153084671,
+          "cumulative_band": 8.915383955297464e-05,
+          "increment": 0.00016563657629327204,
+          "increment_band": 0.00014404173346546783,
+          "relative_band": 0.8696251558015247,
+          "options_used": 52
+        },
+        {
+          "expiry": "2026-11-03",
+          "minutes": 46140,
+          "rate": 0.04026958425245791,
+          "forward": 7745.433886917324,
+          "total_variance": 0.0019976380745575506,
+          "cumulative": 0.0019976380745575506,
+          "cumulative_band": 7.523797601826077e-05,
+          "increment": 6.465225924908347e-05,
+          "increment_band": 0.00016439181557123542,
+          "relative_band": 2.5427079808284643,
+          "options_used": 81
+        },
+        {
+          "expiry": "2026-11-04",
+          "minutes": 47580,
+          "rate": 0.04029489788034614,
+          "forward": 7746.186113427495,
+          "total_variance": 0.0021749624266400023,
+          "cumulative": 0.0021749624266400023,
+          "cumulative_band": 8.470482857384267e-05,
+          "increment": 0.0001773243520824517,
+          "increment_band": 0.00015994280459210344,
+          "relative_band": 0.9019787903566328,
+          "options_used": 85
+        }
+      ],
+      "fit": {
+        "family": "meanrev",
+        "kappa_per_session": 0.075,
+        "chi2_per_dof": 0.08323986887328629,
+        "base_vol_first_session": 0.0983591516188924,
+        "base_vol_last_session": 0.16077868250133723,
+        "weekend_in_base_sessions": 0.10765172096047508,
+        "weekend_in_base_sessions_90pct": [
+          0.05662394826028677,
+          0.16887531431595088
+        ]
+      },
+      "events": [
+        {
+          "key": "CPI 2026-10-14",
+          "label": "Consumer Price Index for September 2026",
+          "session": "2026-10-14",
+          "extra_variance": 4.759619303263943e-05,
+          "extra_variance_90pct": [
+            3.1352808592640165e-05,
+            6.497740720969238e-05
+          ],
+          "extra_variance_pct_sq": 0.4759619303263943,
+          "extra_variance_pct_sq_90pct": [
+            0.31352808592640163,
+            0.6497740720969238
+          ],
+          "multiple_of_base": 1.6718846942219754,
+          "multiple_90pct": [
+            1.4323845967460196,
+            1.9386151940805632
+          ],
+          "implied_one_sd_move": 0.01088283126564147
+        },
+        {
+          "key": "FOMC 2026-10-28",
+          "label": "FOMC statement",
+          "session": "2026-10-28",
+          "extra_variance": 7.709214764744737e-05,
+          "extra_variance_90pct": [
+            3.5444968510792434e-05,
+            0.00011992411917882547
+          ],
+          "extra_variance_pct_sq": 0.7709214764744737,
+          "extra_variance_pct_sq_90pct": [
+            0.35444968510792435,
+            1.1992411917882546
+          ],
+          "multiple_of_base": 1.8060952177833436,
+          "multiple_90pct": [
+            1.3480128078643177,
+            2.297350175395939
+          ],
+          "implied_one_sd_move": 0.013142628176132454
+        },
+        {
+          "key": "ELECTION 2026-11-04",
+          "label": "U.S. general election 2026 (reaction session follows)",
+          "session": "2026-11-04",
+          "extra_variance": 8.056245779561301e-05,
+          "extra_variance_90pct": [
+            0.0,
+            0.0001546243999640822
+          ],
+          "extra_variance_pct_sq": 0.8056245779561302,
+          "extra_variance_pct_sq_90pct": [
+            0.0,
+            1.546243999640822
+          ],
+          "multiple_of_base": 1.7853736332158818,
+          "multiple_90pct": [
+            1.0,
+            2.555100659616137
+          ],
+          "implied_one_sd_move": 0.013532958608370681
+        },
+        {
+          "key": "EARNINGS per name",
+          "label": "TSLA, GOOGL, LLY, META, MSFT, AAPL, AMZN",
+          "session": "2026-10-22",
+          "extra_variance": 1.7542994148055408e-05,
+          "extra_variance_90pct": [
+            6.492379507856724e-06,
+            2.7634488191912046e-05
+          ],
+          "extra_variance_pct_sq": 0.17542994148055407,
+          "extra_variance_pct_sq_90pct": [
+            0.06492379507856724,
+            0.2763448819191205
+          ],
+          "multiple_of_base": 1.1996474117303475,
+          "multiple_90pct": [
+            1.0724132488305929,
+            1.327993023784918
+          ],
+          "implied_one_sd_move": 0.010267077204997439
+        }
+      ],
+      "sessions": [
+        {
+          "session": "2026-10-05",
+          "fwd_vol": 0.10818589502897391,
+          "fwd_vol_90pct": [
+            0.10682935372434774,
+            0.10975110979836872
+          ],
+          "base_vol": 0.0983591516188924,
+          "multiple": 1.20979486404263,
+          "multiple_90pct": [
+            1.1095807155232882,
+            1.3469603382489348
+          ],
+          "strip_vol": 0.10786958051460915,
+          "weekend": true,
+          "events": []
+        },
+        {
+          "session": "2026-10-06",
+          "fwd_vol": 0.10545666011360864,
+          "fwd_vol_90pct": [
+            0.10332351455373716,
+            0.10740591734223527
+          ],
+          "base_vol": 0.10545666011360864,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.10636538164639696,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-07",
+          "fwd_vol": 0.11163855278525946,
+          "fwd_vol_90pct": [
+            0.11050304706198259,
+            0.11278032868425908
+          ],
+          "base_vol": 0.11163855278525946,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.11439790301976652,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-08",
+          "fwd_vol": 0.11708224992324459,
+          "fwd_vol_90pct": [
+            0.11582191726087218,
+            0.11837544818951344
+          ],
+          "base_vol": 0.11708224992324459,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.11086181901788669,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-09",
+          "fwd_vol": 0.1219154395321394,
+          "fwd_vol_90pct": [
+            0.1202716163180502,
+            0.123589621822754
+          ],
+          "base_vol": 0.1219154395321394,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.12258949404683343,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-12",
+          "fwd_vol": 0.13403244269377868,
+          "fwd_vol_90pct": [
+            0.12940281620511085,
+            0.13886142005329546
+          ],
+          "base_vol": 0.12623403074618655,
+          "multiple": 1.1273712763640178,
+          "multiple_90pct": [
+            1.0726400831819474,
+            1.1870578942914662
+          ],
+          "strip_vol": 0.1357188295210883,
+          "weekend": true,
+          "events": []
+        },
+        {
+          "session": "2026-10-13",
+          "fwd_vol": 0.13011246099165502,
+          "fwd_vol_90pct": [
+            0.12809953590014886,
+            0.13192970454756656
+          ],
+          "base_vol": 0.13011246099165502,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.13218196653789588,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-14",
+          "fwd_vol": 0.17275959053499382,
+          "fwd_vol_90pct": [
+            0.1617007505806082,
+            0.18375859874839706
+          ],
+          "base_vol": 0.1336100126397479,
+          "multiple": 1.6718846942219754,
+          "multiple_90pct": [
+            1.4323845967460196,
+            1.9386151940805632
+          ],
+          "strip_vol": 0.16686669907206417,
+          "weekend": false,
+          "events": [
+            "CPI"
+          ]
+        },
+        {
+          "session": "2026-10-15",
+          "fwd_vol": 0.1367748890404768,
+          "fwd_vol_90pct": [
+            0.13479577570215542,
+            0.13853004489027448
+          ],
+          "base_vol": 0.1367748890404768,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.1438958450338978,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-16",
+          "fwd_vol": 0.13964695719421252,
+          "fwd_vol_90pct": [
+            0.1375193576031014,
+            0.14156459008530511
+          ],
+          "base_vol": 0.13964695719421252,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": null,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-19",
+          "fwd_vol": 0.14922290572467112,
+          "fwd_vol_90pct": [
+            0.14559383355741376,
+            0.15303780524962676
+          ],
+          "base_vol": 0.14225965843092056,
+          "multiple": 1.100290749553557,
+          "multiple_90pct": [
+            1.0559470363889323,
+            1.1518738656436058
+          ],
+          "strip_vol": null,
+          "weekend": true,
+          "events": []
+        },
+        {
+          "session": "2026-10-20",
+          "fwd_vol": 0.1446413790351854,
+          "fwd_vol_90pct": [
+            0.14184760265910595,
+            0.1471953044312071
+          ],
+          "base_vol": 0.1446413790351854,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.13798615198013212,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-21",
+          "fwd_vol": 0.1468164583995728,
+          "fwd_vol_90pct": [
+            0.14351949432296726,
+            0.14991553228730878
+          ],
+          "base_vol": 0.1468164583995728,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.1455097445616679,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-22",
+          "fwd_vol": 0.16298479785554007,
+          "fwd_vol_90pct": [
+            0.15601146979419445,
+            0.16874675386511542
+          ],
+          "base_vol": 0.14880594681228737,
+          "multiple": 1.1996474117303475,
+          "multiple_90pct": [
+            1.0724132488305929,
+            1.327993023784918
+          ],
+          "strip_vol": 0.15093693479759424,
+          "weekend": false,
+          "events": [
+            "earnings x1"
+          ]
+        },
+        {
+          "session": "2026-10-23",
+          "fwd_vol": 0.15062818594791363,
+          "fwd_vol_90pct": [
+            0.1458854626662334,
+            0.1553089836857626
+          ],
+          "base_vol": 0.15062818594791363,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.15021097152932397,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-26",
+          "fwd_vol": 0.15882295201298252,
+          "fwd_vol_90pct": [
+            0.1547078280896784,
+            0.16349589385549898
+          ],
+          "base_vol": 0.1522992610293505,
+          "multiple": 1.0875041817688258,
+          "multiple_90pct": [
+            1.0459128904849204,
+            1.138872142784745
+          ],
+          "strip_vol": 0.17316816092375623,
+          "weekend": true,
+          "events": []
+        },
+        {
+          "session": "2026-10-27",
+          "fwd_vol": 0.1538333582896963,
+          "fwd_vol_90pct": [
+            0.14750858175110992,
+            0.16025084842185075
+          ],
+          "base_vol": 0.1538333582896963,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.14489439011917649,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-10-28",
+          "fwd_vol": 0.20863275436702122,
+          "fwd_vol_90pct": [
+            0.1833865190214975,
+            0.23229553853305543
+          ],
+          "base_vol": 0.1552430513343933,
+          "multiple": 1.8060952177833436,
+          "multiple_90pct": [
+            1.3480128078643177,
+            2.297350175395939
+          ],
+          "strip_vol": 0.2068957358843791,
+          "weekend": false,
+          "events": [
+            "FOMC"
+          ]
+        },
+        {
+          "session": "2026-10-29",
+          "fwd_vol": 0.20539708757371325,
+          "fwd_vol_90pct": [
+            0.1805430402807256,
+            0.22540859806065003
+          ],
+          "base_vol": 0.1565395332895936,
+          "multiple": 1.7216326613051587,
+          "multiple_90pct": [
+            1.2464397713725928,
+            2.2208566230466107
+          ],
+          "strip_vol": null,
+          "weekend": false,
+          "events": [
+            "earnings x4"
+          ]
+        },
+        {
+          "session": "2026-10-30",
+          "fwd_vol": 0.1836336229135003,
+          "fwd_vol_90pct": [
+            0.17120084422430368,
+            0.19394729875981412
+          ],
+          "base_vol": 0.1577328070304897,
+          "multiple": 1.3553777150452861,
+          "multiple_90pct": [
+            1.1208602754518502,
+            1.6033757630522398
+          ],
+          "strip_vol": null,
+          "weekend": false,
+          "events": [
+            "earnings x2"
+          ]
+        },
+        {
+          "session": "2026-11-02",
+          "fwd_vol": 0.1650976056578463,
+          "fwd_vol_90pct": [
+            0.15860447375506623,
+            0.17419427747155414
+          ],
+          "base_vol": 0.15883184258177524,
+          "multiple": 1.0804542984428513,
+          "multiple_90pct": [
+            1.039819876497197,
+            1.1338907312796889
+          ],
+          "strip_vol": 0.2043047166021983,
+          "weekend": true,
+          "events": []
+        },
+        {
+          "session": "2026-11-03",
+          "fwd_vol": 0.1598447085113016,
+          "fwd_vol_90pct": [
+            0.14981471307943256,
+            0.1721967948712853
+          ],
+          "base_vol": 0.1598447085113016,
+          "multiple": 1.0,
+          "multiple_90pct": [
+            1.0,
+            1.0
+          ],
+          "strip_vol": 0.12764156584267147,
+          "weekend": false,
+          "events": []
+        },
+        {
+          "session": "2026-11-04",
+          "fwd_vol": 0.2148290578840774,
+          "fwd_vol_90pct": [
+            0.1711239942446043,
+            0.25421763146173354
+          ],
+          "base_vol": 0.16077868250133723,
+          "multiple": 1.7853736332158818,
+          "multiple_90pct": [
+            1.0,
+            2.555100659616137
+          ],
+          "strip_vol": 0.21139001093896995,
+          "weekend": false,
+          "events": [
+            "Election reaction"
+          ]
+        }
+      ],
+      "bootstrap": {
+        "draws": 1000,
+        "seed": 0,
+        "level": 0.9,
+        "quote_correlation": 0.5
+      },
+      "strike_coverage": "own",
+      "notes": []
+    },
+    "sensitivity": {
+      "cboe": {
+        "meanrev (default)": {
+          "chi2_per_dof": 0.14293244094768512,
+          "weekend_in_base_sessions": [
+            0.07428798084097211,
+            0.03911456764551739,
+            0.11900301131521336
+          ],
+          "events": {
+            "CPI 2026-10-14": [
+              1.7012478832330848,
+              1.5075032314342902,
+              1.8765658406725252
+            ],
+            "FOMC 2026-10-28": [
+              1.6621247128544583,
+              1.3231389853571074,
+              2.0537150020926362
+            ],
+            "ELECTION 2026-11-04": [
+              1.791757148112393,
+              1.2677078581255201,
+              2.322691995364914
+            ],
+            "NFP 2026-11-06": [
+              1.255623423994579,
+              1.0,
+              1.7714794976182784
+            ],
+            "CPI 2026-11-10": [
+              1.1512460191417584,
+              1.0,
+              1.945461142867457
+            ],
+            "EARNINGS per name": [
+              1.1454867760361604,
+              1.0597211503231023,
+              1.2284734938051398
+            ]
+          }
+        },
+        "spline, 8 knots, penalty 1": {
+          "chi2_per_dof": 0.21811650694631318,
+          "weekend_in_base_sessions": [
+            0.04276478232858953,
+            0.014938730849664461,
+            0.06041188399011229
+          ],
+          "events": {
+            "CPI 2026-10-14": [
+              1.810378258284253,
+              1.6549703599469092,
+              2.0045331671585793
+            ],
+            "FOMC 2026-10-28": [
+              1.5093500048731774,
+              1.2148580258132828,
+              1.840959715525411
+            ],
+            "ELECTION 2026-11-04": [
+              1.3034091083182662,
+              1.0,
+              1.5597118339627192
+            ],
+            "NFP 2026-11-06": [
+              1.0,
+              1.0,
+              1.3759407742823497
+            ],
+            "CPI 2026-11-10": [
+              1.0,
+              1.0,
+              1.6660999697836334
+            ],
+            "EARNINGS per name": [
+              1.0843850193371163,
+              1.0053933774012311,
+              1.1586774956104522
+            ]
+          }
+        },
+        "spline, 6 knots, penalty 0.1": {
+          "chi2_per_dof": 0.16808836039048103,
+          "weekend_in_base_sessions": [
+            0.049590286685843074,
+            0.017960752426752685,
+            0.0659088334780145
+          ],
+          "events": {
+            "CPI 2026-10-14": [
+              1.7744108931808555,
+              1.6243388821760956,
+              1.9735738075660223
+            ],
+            "FOMC 2026-10-28": [
+              1.5423060038283931,
+              1.2350667487340952,
+              1.8641331350871728
+            ],
+            "ELECTION 2026-11-04": [
+              1.3899365527306975,
+              1.0,
+              1.669053216157198
+            ],
+            "NFP 2026-11-06": [
+              1.0,
+              1.0,
+              1.3646400389809583
+            ],
+            "CPI 2026-11-10": [
+              1.0,
+              1.0,
+              1.6674522363803874
+            ],
+            "EARNINGS per name": [
+              1.0972376727821198,
+              1.019413756451779,
+              1.163441932972075
+            ]
+          }
+        },
+        "spline, 10 knots, penalty 10": {
+          "chi2_per_dof": 0.2698269958443927,
+          "weekend_in_base_sessions": [
+            0.03949011905548435,
+            0.013431040602965849,
+            0.058783447963090985
+          ],
+          "events": {
+            "CPI 2026-10-14": [
+              1.8279482479835325,
+              1.660647087218896,
+              2.007307506580571
+            ],
+            "FOMC 2026-10-28": [
+              1.4947073998610452,
+              1.20967730796528,
+              1.8297780289480043
+            ],
+            "ELECTION 2026-11-04": [
+              1.2587443663094855,
+              1.0,
+              1.5380123142854794
+            ],
+            "NFP 2026-11-06": [
+              1.0,
+              1.0,
+              1.4003754981694487
+            ],
+            "CPI 2026-11-10": [
+              1.0,
+              1.0,
+              1.7002926602207624
+            ],
+            "EARNINGS per name": [
+              1.0783801421278905,
+              1.0,
+              1.1569881180016706
+            ]
+          }
+        },
+        "meanrev, common strike window": {
+          "chi2_per_dof": 0.10934688703716705,
+          "weekend_in_base_sessions": [
+            0.10612041428646105,
+            0.07425926214886286,
+            0.14580396288479922
+          ],
+          "events": {
+            "CPI 2026-10-14": [
+              1.7175000562194194,
+              1.537931556861597,
+              1.8868917083671066
+            ],
+            "FOMC 2026-10-28": [
+              1.59994248866072,
+              1.292037107982795,
+              1.9459437799547343
+            ],
+            "ELECTION 2026-11-04": [
+              1.7795383751664597,
+              1.284023936037341,
+              2.2731948474434245
+            ],
+            "NFP 2026-11-06": [
+              1.2399211336712295,
+              1.0,
+              1.7460222034953765
+            ],
+            "CPI 2026-11-10": [
+              1.2874344529651707,
+              1.0,
+              2.081381450817527
+            ],
+            "EARNINGS per name": [
+              1.1481735878878587,
+              1.0691102040008844,
+              1.2283774387973607
+            ]
+          }
+        }
+      },
+      "yahoo": {
+        "meanrev (default)": {
+          "chi2_per_dof": 0.08323986887328629,
+          "weekend_in_base_sessions": [
+            0.10765172096047508,
+            0.06193885807452324,
+            0.17248785623533427
+          ],
+          "events": {
+            "CPI 2026-10-14": [
+              1.6718846942219754,
+              1.420510059316174,
+              1.939635242518089
+            ],
+            "FOMC 2026-10-28": [
+              1.8060952177833436,
+              1.3674054955782762,
+              2.353040970868371
+            ],
+            "ELECTION 2026-11-04": [
+              1.7853736332158818,
+              1.0,
+              2.5728767679043996
+            ],
+            "EARNINGS per name": [
+              1.1996474117303475,
+              1.0723028841181843,
+              1.3275843489314243
+            ]
+          }
+        },
+        "spline, 8 knots, penalty 1": {
+          "chi2_per_dof": 0.2111599289240892,
+          "weekend_in_base_sessions": [
+            0.05845643075199031,
+            0.02513541896847166,
+            0.08399022603354857
+          ],
+          "events": {
+            "CPI 2026-10-14": [
+              1.816208210512553,
+              1.6033451917156523,
+              2.0822553075372676
+            ],
+            "FOMC 2026-10-28": [
+              1.5088968641379736,
+              1.105924516838849,
+              1.9579673595149998
+            ],
+            "ELECTION 2026-11-04": [
+              1.302632669021291,
+              1.0,
+              1.919328155818796
+            ],
+            "EARNINGS per name": [
+              1.1013837328932519,
+              1.0,
+              1.1981877587163294
+            ]
+          }
+        },
+        "spline, 6 knots, penalty 0.1": {
+          "chi2_per_dof": 0.1433145842244752,
+          "weekend_in_base_sessions": [
+            0.06629707039402218,
+            0.029649959779443593,
+            0.09080769306084213
+          ],
+          "events": {
+            "CPI 2026-10-14": [
+              1.7836810394256069,
+              1.5988261243675612,
+              2.0687337734520868
+            ],
+            "FOMC 2026-10-28": [
+              1.5566532877840176,
+              1.1359354930808292,
+              1.9783882807075892
+            ],
+            "ELECTION 2026-11-04": [
+              1.357036040038157,
+              1.0,
+              1.96169313534372
+            ],
+            "EARNINGS per name": [
+              1.117484379896157,
+              1.0,
+              1.2106995959297684
+            ]
+          }
+        },
+        "spline, 10 knots, penalty 10": {
+          "chi2_per_dof": 0.30119800632634913,
+          "weekend_in_base_sessions": [
+            0.05517299527071841,
+            0.0236208617390117,
+            0.08285225677386825
+          ],
+          "events": {
+            "CPI 2026-10-14": [
+              1.830864490365077,
+              1.6004422122663124,
+              2.0893310953151536
+            ],
+            "FOMC 2026-10-28": [
+              1.4894598905739689,
+              1.0964149066183182,
+              1.9759235788862186
+            ],
+            "ELECTION 2026-11-04": [
+              1.2799384877624025,
+              1.0,
+              1.9304437558175886
+            ],
+            "EARNINGS per name": [
+              1.0948239590937872,
+              1.0,
+              1.195872407438309
+            ]
+          }
+        },
+        "meanrev, common strike window": {
+          "chi2_per_dof": 0.05398747482600641,
+          "weekend_in_base_sessions": [
+            0.15145383782872535,
+            0.10534689385536052,
+            0.20929590333706174
+          ],
+          "events": {
+            "CPI 2026-10-14": [
+              1.6665279435612337,
+              1.4328248403609882,
+              1.9436398183215322
+            ],
+            "FOMC 2026-10-28": [
+              1.7044472608732295,
+              1.30583526617278,
+              2.1948616542786508
+            ],
+            "ELECTION 2026-11-04": [
+              1.8544774595339042,
+              1.0838340493793406,
+              2.5986950436823353
+            ],
+            "EARNINGS per name": [
+              1.155171304482493,
+              1.0399867306899315,
+              1.2717218501021659
+            ]
+          }
+        }
+      }
+    },
+    "weekend_range": {
+      "point_estimates": {
+        "cboe: meanrev (default)": 0.07428798084097211,
+        "cboe: spline, 8 knots, penalty 1": 0.04276478232858953,
+        "cboe: spline, 6 knots, penalty 0.1": 0.049590286685843074,
+        "cboe: spline, 10 knots, penalty 10": 0.03949011905548435,
+        "cboe: meanrev, common strike window": 0.10612041428646105,
+        "yahoo: meanrev (default)": 0.10765172096047508,
+        "yahoo: spline, 8 knots, penalty 1": 0.05845643075199031,
+        "yahoo: spline, 6 knots, penalty 0.1": 0.06629707039402218,
+        "yahoo: spline, 10 knots, penalty 10": 0.05517299527071841,
+        "yahoo: meanrev, common strike window": 0.15145383782872535
+      },
+      "point_min": 0.03949011905548435,
+      "point_max": 0.15145383782872535,
+      "interval_min": 0.013431040602965849,
+      "interval_max": 0.20929590333706174
+    },
+    "bootstrap_components": {
+      "cboe": {
+        "draws": 400,
+        "quote_correlation": 0.5,
+        "interval_widths": {
+          "quotes_only": {
+            "event_multiple_interval_width": {
+              "CPI 2026-10-14": 0.2561511319215697,
+              "FOMC 2026-10-28": 0.48647782842748466,
+              "ELECTION 2026-11-04": 0.7814332810082338,
+              "NFP 2026-11-06": 0.6311939097125887,
+              "CPI 2026-11-10": 0.7281596299101314,
+              "EARNINGS per name": 0.12373068986973035
+            },
+            "weekend_ratio_interval_width": 0.05704453699790899
+          },
+          "residuals_only": {
+            "event_multiple_interval_width": {
+              "CPI 2026-10-14": 0.25187342127893375,
+              "FOMC 2026-10-28": 0.5175128252391736,
+              "ELECTION 2026-11-04": 0.8171709343635329,
+              "NFP 2026-11-06": 0.6609099645831351,
+              "CPI 2026-11-10": 0.71991315063006,
+              "EARNINGS per name": 0.13301136149124582
+            },
+            "weekend_ratio_interval_width": 0.05544644546597324
+          },
+          "both": {
+            "event_multiple_interval_width": {
+              "CPI 2026-10-14": 0.369062609238235,
+              "FOMC 2026-10-28": 0.7305760167355289,
+              "ELECTION 2026-11-04": 1.0549841372393938,
+              "NFP 2026-11-06": 0.7714794976182784,
+              "CPI 2026-11-10": 0.9454611428674571,
+              "EARNINGS per name": 0.1687523434820375
+            },
+            "weekend_ratio_interval_width": 0.07988844366969597
+          }
+        },
+        "resampled_sd_over_total": {
+          "independent_quotes": {
+            "min": 0.000940809022446663,
+            "median": 0.0019982007923285477,
+            "max": 0.0033037470236954
+          },
+          "correlation_0.5": {
+            "min": 0.007026460747341839,
+            "median": 0.01017694767945093,
+            "max": 0.01395816261718296
+          }
+        },
+        "quote_band_half_width_over_total": {
+          "min": 0.017490855293927403,
+          "median": 0.025501702344090525,
+          "max": 0.03306951255581518
+        },
+        "chi2_per_dof": 0.14293244094768512
+      },
+      "yahoo": {
+        "draws": 400,
+        "quote_correlation": 0.5,
+        "interval_widths": {
+          "quotes_only": {
+            "event_multiple_interval_width": {
+              "CPI 2026-10-14": 0.4298976863325592,
+              "FOMC 2026-10-28": 0.8604761363550719,
+              "ELECTION 2026-11-04": 1.2975410946499095,
+              "EARNINGS per name": 0.2165061445173757
+            },
+            "weekend_ratio_interval_width": 0.0892120418214072
+          },
+          "residuals_only": {
+            "event_multiple_interval_width": {
+              "CPI 2026-10-14": 0.26309597003057794,
+              "FOMC 2026-10-28": 0.5671644258813484,
+              "ELECTION 2026-11-04": 0.881110546039898,
+              "EARNINGS per name": 0.1417108853859066
+            },
+            "weekend_ratio_interval_width": 0.057872757938716365
+          },
+          "both": {
+            "event_multiple_interval_width": {
+              "CPI 2026-10-14": 0.519125183201915,
+              "FOMC 2026-10-28": 0.9856354752900949,
+              "ELECTION 2026-11-04": 1.5728767679043996,
+              "EARNINGS per name": 0.25528146481324
+            },
+            "weekend_ratio_interval_width": 0.11054899816081104
+          }
+        },
+        "resampled_sd_over_total": {
+          "independent_quotes": {
+            "min": 0.001875746705818044,
+            "median": 0.003088880670001313,
+            "max": 0.008219040337472791
+          },
+          "correlation_0.5": {
+            "min": 0.012302517130356181,
+            "median": 0.014459929430494737,
+            "max": 0.01937051701371446
+          }
+        },
+        "quote_band_half_width_over_total": {
+          "min": 0.03005764202552216,
+          "median": 0.036087632039596376,
+          "max": 0.04612234546519288
+        },
+        "chi2_per_dof": 0.08323986887328629
+      }
+    },
+    "adapter_agreement": {
+      "events_in_both": [
+        "CPI 2026-10-14",
+        "FOMC 2026-10-28",
+        "ELECTION 2026-11-04",
+        "EARNINGS per name"
+      ],
+      "multiple_difference_yahoo_minus_cboe": {
+        "CPI 2026-10-14": -0.02936318901110946,
+        "FOMC 2026-10-28": 0.1439705049288853,
+        "ELECTION 2026-11-04": -0.006383514896511233,
+        "EARNINGS per name": 0.054160635694187054
+      }
+    },
+    "daily_resolution": {
+      "first_session_with_band_over_50pct_of_increment": 17,
+      "first_session_with_band_over_100pct_of_increment": 22,
+      "relative_band_by_session": [
+        0.029090501587158885,
+        0.08615515431158058,
+        0.13383821548852728,
+        0.20111644187925112,
+        0.1889818417542051,
+        0.19764818305290704,
+        0.2900716501946237,
+        0.20776531567095186,
+        0.3554142608315988,
+        0.3696683481069326,
+        0.33550419310303226,
+        0.45961118429308606,
+        0.4624498608784434,
+        0.4716529446950081,
+        0.48936260505994916,
+        0.3940007050590079,
+        0.5841586125646843,
+        0.3474283658779729,
+        0.4371651595748395,
+        0.45580425118529505,
+        0.558929793912335,
+        1.1459874579884393,
+        0.670795108830954,
+        1.2003416359870633,
+        0.7966700427741261,
+        0.7849710498561617,
+        1.3101936185395688
+      ]
+    }
+  },
+  "bounds": {
+    "cboe": {
+      "snapshot": {
+        "source": "cboe",
+        "symbol": "SPX",
+        "valuation_time_et": "2026-10-02T16:15:00-04:00",
+        "downloaded_utc": "2026-10-04T00:25:08.301472+00:00",
+        "spot": 7722.7202,
+        "n_expiries": 60,
+        "provider_timestamp": "2026-10-03 22:26:08"
+      },
+      "expiries": [
+        {
+          "expiry": "2026-10-05",
+          "vol_mid": 0.0735312784506966,
+          "vol_lp": [
+            0.07267663449685194,
+            0.07441844936802886
+          ],
+          "vol_bid_ask": [
+            0.07247870558535241,
+            0.07456899528530316
+          ],
+          "width_ratio_lp_to_bid_ask": 0.833557249990589,
+          "widen_needed_index_points": 0.00714353921694851
+        },
+        {
+          "expiry": "2026-10-06",
+          "vol_mid": 0.09024218471182409,
+          "vol_lp": [
+            0.08937287675573195,
+            0.09108452751806113
+          ],
+          "vol_bid_ask": [
+            0.08895718974692114,
+            0.09150913722386537
+          ],
+          "width_ratio_lp_to_bid_ask": 0.6706901884104494,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 4.4727541123235644e-05,
+          "forward_variance_step_lp": [
+            4.194578887342648e-05,
+            4.7420504074136005e-05
+          ],
+          "forward_variance_step_bid_ask": [
+            4.0951814901022036e-05,
+            4.850326734544928e-05
+          ]
+        },
+        {
+          "expiry": "2026-10-07",
+          "vol_mid": 0.10135716212584617,
+          "vol_lp": [
+            0.10043426351326545,
+            0.1022648592329174
+          ],
+          "vol_bid_ask": [
+            0.09978876182299866,
+            0.10290166005581726
+          ],
+          "width_ratio_lp_to_bid_ask": 0.5880932059114192,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 5.1423507939657686e-05,
+          "forward_variance_step_lp": [
+            4.720818964093487e-05,
+            5.565678754870795e-05
+          ],
+          "forward_variance_step_bid_ask": [
+            4.459396562540903e-05,
+            5.825305025390634e-05
+          ]
+        },
+        {
+          "expiry": "2026-10-08",
+          "vol_mid": 0.10689433076343054,
+          "vol_lp": [
+            0.10576523249565704,
+            0.10800097231423504
+          ],
+          "vol_bid_ask": [
+            0.10541912465432819,
+            0.10834945341735044
+          ],
+          "width_ratio_lp_to_bid_ask": 0.7629570530021274,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 4.706850526195054e-05,
+          "forward_variance_step_lp": [
+            4.060168224723215e-05,
+            5.3516780401885455e-05
+          ],
+          "forward_variance_step_bid_ask": [
+            3.761624637626618e-05,
+            5.6520764147634825e-05
+          ]
+        },
+        {
+          "expiry": "2026-10-09",
+          "vol_mid": 0.11298348298721145,
+          "vol_lp": [
+            0.11202906802777962,
+            0.11375588707563777
+          ],
+          "vol_bid_ask": [
+            0.11168521572554695,
+            0.1142670006790282
+          ],
+          "width_ratio_lp_to_bid_ask": 0.6683518572720082,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 5.6943939019758896e-05,
+          "forward_variance_step_lp": [
+            4.892901957298523e-05,
+            6.423790253351491e-05
+          ],
+          "forward_variance_step_bid_ask": [
+            4.6218744894919615e-05,
+            6.766913314459818e-05
+          ]
+        },
+        {
+          "expiry": "2026-10-12",
+          "vol_mid": 0.10786695498175732,
+          "vol_lp": [
+            0.10656678074816357,
+            0.10917446588859142
+          ],
+          "vol_bid_ask": [
+            0.10634009368456093,
+            0.10937250307655816
+          ],
+          "width_ratio_lp_to_bid_ask": 0.8600525664833938,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 7.399369445897948e-05,
+          "forward_variance_step_lp": [
+            6.300951747539862e-05,
+            8.587296718509663e-05
+          ],
+          "forward_variance_step_bid_ask": [
+            5.945681944284349e-05,
+            8.853056947511558e-05
+          ]
+        },
+        {
+          "expiry": "2026-10-13",
+          "vol_mid": 0.11302430473969523,
+          "vol_lp": [
+            0.11183315311069172,
+            0.11435480862104568
+          ],
+          "vol_bid_ask": [
+            0.11152862782225814,
+            0.11450044585008048
+          ],
+          "width_ratio_lp_to_bid_ask": 0.8491193251932974,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 6.61774287761861e-05,
+          "forward_variance_step_lp": [
+            5.034639652146122e-05,
+            8.291653392866749e-05
+          ],
+          "forward_variance_step_bid_ask": [
+            4.71139107191186e-05,
+            8.524094683325345e-05
+          ]
+        },
+        {
+          "expiry": "2026-10-14",
+          "vol_mid": 0.12273258427764126,
+          "vol_lp": [
+            0.12132921731818366,
+            0.12408472323447321
+          ],
+          "vol_bid_ask": [
+            0.12114751796431511,
+            0.12429743914507078
+          ],
+          "width_ratio_lp_to_bid_ask": 0.8746751263047514,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 0.00011018130750389571,
+          "forward_variance_step_lp": [
+            8.982186419825844e-05,
+            0.00012920799736459987
+          ],
+          "forward_variance_step_bid_ask": [
+            8.737113387557554e-05,
+            0.00013299148113221594
+          ]
+        },
+        {
+          "expiry": "2026-10-15",
+          "vol_mid": 0.12696828768766652,
+          "vol_lp": [
+            0.12538325607375422,
+            0.12859071139292966
+          ],
+          "vol_bid_ask": [
+            0.12526098052624843,
+            0.12865293978094286
+          ],
+          "width_ratio_lp_to_bid_ask": 0.945829120419157,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 7.89091364856025e-05,
+          "forward_variance_step_lp": [
+            5.371204072823765e-05,
+            0.00010491553958991151
+          ],
+          "forward_variance_step_bid_ask": [
+            5.0885826916818085e-05,
+            0.00010693244605438696
+          ]
+        },
+        {
+          "expiry": "2026-10-16",
+          "vol_mid": 0.130744477559414,
+          "vol_lp": [
+            0.12963070424837406,
+            0.13178325311832023
+          ],
+          "vol_bid_ask": [
+            0.12926761172029494,
+            0.1322048462980812
+          ],
+          "width_ratio_lp_to_bid_ask": 0.7326848474358316,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 8.146636038841375e-05,
+          "forward_variance_step_lp": [
+            5.5595757974091775e-05,
+            0.00010615321934437372
+          ],
+          "forward_variance_step_bid_ask": [
+            5.1423120138075905e-05,
+            0.00011150960063875117
+          ]
+        },
+        {
+          "expiry": "2026-10-19",
+          "vol_mid": 0.12692053634579872,
+          "vol_lp": [
+            0.12562267785583736,
+            0.1283159134148485
+          ],
+          "vol_bid_ask": [
+            0.12548211212564603,
+            0.12834284019413483
+          ],
+          "width_ratio_lp_to_bid_ask": 0.9418725835481973,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 9.463723017483574e-05,
+          "forward_variance_step_lp": [
+            6.892857382789774e-05,
+            0.00012232989533567107
+          ],
+          "forward_variance_step_bid_ask": [
+            6.301992854848462e-05,
+            0.0001262545318011873
+          ]
+        },
+        {
+          "expiry": "2026-10-20",
+          "vol_mid": 0.1296016571544978,
+          "vol_lp": [
+            0.12816392474286434,
+            0.13095299920129708
+          ],
+          "vol_bid_ask": [
+            0.12811471589001278,
+            0.13107173092168006
+          ],
+          "width_ratio_lp_to_bid_ask": 0.942953045987848,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 7.803140861035291e-05,
+          "forward_variance_step_lp": [
+            4.318822783133669e-05,
+            0.00011064154954520955
+          ],
+          "forward_variance_step_bid_ask": [
+            4.2244981974053054e-05,
+            0.00011381783524665287
+          ]
+        },
+        {
+          "expiry": "2026-10-21",
+          "vol_mid": 0.13226510140059225,
+          "vol_lp": [
+            0.13097503080675452,
+            0.13361832304864815
+          ],
+          "vol_bid_ask": [
+            0.13086614376797895,
+            0.13364941643088668
+          ],
+          "width_ratio_lp_to_bid_ask": 0.9499858442489478,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 8.230467661818623e-05,
+          "forward_variance_step_lp": [
+            4.728293450328991e-05,
+            0.00011928916806391854
+          ],
+          "forward_variance_step_bid_ask": [
+            4.42662723709415e-05,
+            0.00012034308086543086
+          ]
+        },
+        {
+          "expiry": "2026-10-22",
+          "vol_mid": 0.13494800041006175,
+          "vol_lp": [
+            0.13350275820523383,
+            0.1363358386851662
+          ],
+          "vol_bid_ask": [
+            0.1334568537827835,
+            0.13642284928760573
+          ],
+          "width_ratio_lp_to_bid_ask": 0.9550415570136915,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 8.719097151619964e-05,
+          "forward_variance_step_lp": [
+            4.7224059441797195e-05,
+            0.00012547829011388956
+          ],
+          "forward_variance_step_bid_ask": [
+            4.612057116711965e-05,
+            0.0001282613718652794
+          ]
+        },
+        {
+          "expiry": "2026-10-23",
+          "vol_mid": 0.13741362155718467,
+          "vol_lp": [
+            0.1362141122815672,
+            0.13868650696073923
+          ],
+          "vol_bid_ask": [
+            0.13606067860691043,
+            0.13875337298944976
+          ],
+          "width_ratio_lp_to_bid_ask": 0.9184753793472655,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 8.851046485173521e-05,
+          "forward_variance_step_lp": [
+            4.901671086798842e-05,
+            0.00012996839725021303
+          ],
+          "forward_variance_step_bid_ask": [
+            4.5314589977757044e-05,
+            0.0001317063397257136
+          ]
+        }
+      ],
+      "mean_width_ratio": 0.8329559300379316,
+      "min_width_ratio": 0.5880932059114192,
+      "expiries_needing_widening": 1,
+      "max_widening_index_points": 0.00714353921694851
+    },
+    "yahoo": {
+      "snapshot": {
+        "source": "yahoo",
+        "symbol": "SPX",
+        "valuation_time_et": "2026-10-02T16:00:00-04:00",
+        "downloaded_utc": "2026-10-04T00:25:38.557479+00:00",
+        "spot": 7722.72021484375,
+        "n_expiries": 56,
+        "provider_timestamp": null
+      },
+      "expiries": [
+        {
+          "expiry": "2026-10-05",
+          "vol_mid": 0.0749522240788886,
+          "vol_lp": [
+            0.07411161586114645,
+            0.07597527436248863
+          ],
+          "vol_bid_ask": [
+            0.07365574302830387,
+            0.07622665746110295
+          ],
+          "width_ratio_lp_to_bid_ask": 0.7258900300907362,
+          "widen_needed_index_points": 0.00403265546394682
+        },
+        {
+          "expiry": "2026-10-06",
+          "vol_mid": 0.09115955996943302,
+          "vol_lp": [
+            0.08982123742771023,
+            0.0924721787044449
+          ],
+          "vol_bid_ask": [
+            0.08959911365635312,
+            0.0926937407791768
+          ],
+          "width_ratio_lp_to_bid_ask": 0.8566296810024194,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 4.4895215923744755e-05,
+          "forward_variance_step_lp": [
+            4.097175843510714e-05,
+            4.8566631563662366e-05
+          ],
+          "forward_variance_step_bid_ask": [
+            4.022053355873803e-05,
+            4.9569898288751494e-05
+          ]
+        },
+        {
+          "expiry": "2026-10-07",
+          "vol_mid": 0.10217187967514142,
+          "vol_lp": [
+            0.10056270266890524,
+            0.10375759905911637
+          ],
+          "vol_bid_ask": [
+            0.1002828029983604,
+            0.10402665723503372
+          ],
+          "width_ratio_lp_to_bid_ask": 0.8534162182833231,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 5.1932064346507564e-05,
+          "forward_variance_step_lp": [
+            4.482156302187956e-05,
+            5.905966586405853e-05
+          ],
+          "forward_variance_step_bid_ask": [
+            4.3601875527372354e-05,
+            6.0262253165642814e-05
+          ]
+        },
+        {
+          "expiry": "2026-10-08",
+          "vol_mid": 0.10800999469884964,
+          "vol_lp": [
+            0.1063870764485652,
+            0.10958244070488327
+          ],
+          "vol_bid_ask": [
+            0.10616680880487568,
+            0.10982225010388391
+          ],
+          "width_ratio_lp_to_bid_ask": 0.8740600360497255,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 4.8771202047439134e-05,
+          "forward_variance_step_lp": [
+            3.857825588787778e-05,
+            5.886460828674611e-05
+          ],
+          "forward_variance_step_bid_ask": [
+            3.70427963654526e-05,
+            6.049960772942564e-05
+          ]
+        },
+        {
+          "expiry": "2026-10-09",
+          "vol_mid": 0.11449514421527121,
+          "vol_lp": [
+            0.11290436574971326,
+            0.11597413478955021
+          ],
+          "vol_bid_ask": [
+            0.11262020766443406,
+            0.11633986815950609
+          ],
+          "width_ratio_lp_to_bid_ask": 0.8249880138168206,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 5.963565099467702e-05,
+          "forward_variance_step_lp": [
+            4.707370622569762e-05,
+            7.189243662919509e-05
+          ],
+          "forward_variance_step_bid_ask": [
+            4.4979776748990734e-05,
+            7.429152524036342e-05
+          ]
+        },
+        {
+          "expiry": "2026-10-12",
+          "vol_mid": 0.1088315900261756,
+          "vol_lp": [
+            0.106763731633397,
+            0.11081552038406436
+          ],
+          "vol_bid_ask": [
+            0.10655714543703351,
+            0.11105946484456886
+          ],
+          "width_ratio_lp_to_bid_ask": 0.8997791611425543,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 7.309365351815169e-05,
+          "forward_variance_step_lp": [
+            5.434231326462147e-05,
+            9.196993134930054e-05
+          ],
+          "forward_variance_step_bid_ask": [
+            5.150547389943096e-05,
+            9.468183313687245e-05
+          ]
+        },
+        {
+          "expiry": "2026-10-13",
+          "vol_mid": 0.1143161172248581,
+          "vol_lp": [
+            0.11213070245806599,
+            0.11649911241441954
+          ],
+          "vol_bid_ask": [
+            0.11191735912772684,
+            0.11666556493074731
+          ],
+          "width_ratio_lp_to_bid_ask": 0.9202014950705897,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 6.93336201501009e-05,
+          "forward_variance_step_lp": [
+            4.24806662773225e-05,
+            9.673296220258365e-05
+          ],
+          "forward_variance_step_bid_ask": [
+            3.955726219109632e-05,
+            9.910997810910543e-05
+          ]
+        },
+        {
+          "expiry": "2026-10-14",
+          "vol_mid": 0.12385483497000625,
+          "vol_lp": [
+            0.121571729273706,
+            0.1261284252257448
+          ],
+          "vol_bid_ask": [
+            0.12140030910366942,
+            0.12626165387966565
+          ],
+          "width_ratio_lp_to_bid_ask": 0.9374769414869418,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 0.00011049402880637627,
+          "forward_variance_step_lp": [
+            7.688698404484384e-05,
+            0.00014409401925474796
+          ],
+          "forward_variance_step_bid_ask": [
+            7.434801687365245e-05,
+            0.00014664004073909972
+          ]
+        },
+        {
+          "expiry": "2026-10-15",
+          "vol_mid": 0.12832383784552603,
+          "vol_lp": [
+            0.12595114337374796,
+            0.13076517628646728
+          ],
+          "vol_bid_ask": [
+            0.125721321774043,
+            0.1308746116334152
+          ],
+          "width_ratio_lp_to_bid_ask": 0.9346051993606179,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 8.216672308737909e-05,
+          "forward_variance_step_lp": [
+            4.1992934038059815e-05,
+            0.00012311693966249315
+          ],
+          "forward_variance_step_bid_ask": [
+            3.8827388621425147e-05,
+            0.0001255060575533333
+          ]
+        },
+        {
+          "expiry": "2026-10-19",
+          "vol_mid": 0.12804479367025162,
+          "vol_lp": [
+            0.12555583848730298,
+            0.1304300359398774
+          ],
+          "vol_bid_ask": [
+            0.12555553621047844,
+            0.130486572868682
+          ],
+          "width_ratio_lp_to_bid_ask": 0.9882560743344818,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 0.0001771284397005785,
+          "forward_variance_step_lp": [
+            0.0001252018042472436,
+            0.00022733130399099633
+          ],
+          "forward_variance_step_bid_ask": [
+            0.00012417847624698246,
+            0.00023007840315417442
+          ]
+        },
+        {
+          "expiry": "2026-10-20",
+          "vol_mid": 0.1304481616834197,
+          "vol_lp": [
+            0.12816770726064128,
+            0.13270865288405737
+          ],
+          "vol_bid_ask": [
+            0.12809175946991333,
+            0.1327627467668136
+          ],
+          "width_ratio_lp_to_bid_ask": 0.9722411487724885,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 7.555626245350842e-05,
+          "forward_variance_step_lp": [
+            1.775725654895588e-05,
+            0.00013429038924706038
+          ],
+          "forward_variance_step_bid_ask": [
+            1.6110417289125515e-05,
+            0.00013500210761789155
+          ]
+        },
+        {
+          "expiry": "2026-10-21",
+          "vol_mid": 0.13317348760987022,
+          "vol_lp": [
+            0.13083716851165714,
+            0.13544787272889608
+          ],
+          "vol_bid_ask": [
+            0.1308323881078662,
+            0.1354741371123846
+          ],
+          "width_ratio_lp_to_bid_ask": 0.9932316998116462,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 8.40201815968327e-05,
+          "forward_variance_step_lp": [
+            2.257635811886427e-05,
+            0.00014490711503778453
+          ],
+          "forward_variance_step_bid_ask": [
+            2.1803060435331037e-05,
+            0.00014623730275833426
+          ]
+        },
+        {
+          "expiry": "2026-10-22",
+          "vol_mid": 0.136008465897832,
+          "vol_lp": [
+            0.13343550604832832,
+            0.1385193585167199
+          ],
+          "vol_bid_ask": [
+            0.1334287216024202,
+            0.1385401813312922
+          ],
+          "width_ratio_lp_to_bid_ask": 0.9945476091035067,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 9.040459637338577e-05,
+          "forward_variance_step_lp": [
+            2.061448542078903e-05,
+            0.0001602830823530521
+          ],
+          "forward_variance_step_bid_ask": [
+            2.0144877448122125e-05,
+            0.00016066431529864974
+          ]
+        },
+        {
+          "expiry": "2026-10-23",
+          "vol_mid": 0.1384690232252281,
+          "vol_lp": [
+            0.13657166912942012,
+            0.1404359922068439
+          ],
+          "vol_bid_ask": [
+            0.1363846982484511,
+            0.14052243546699747
+          ],
+          "width_ratio_lp_to_bid_ask": 0.9342608693345409,
+          "widen_needed_index_points": 0.0,
+          "forward_variance_step": 8.953704749120389e-05,
+          "forward_variance_step_lp": [
+            2.174242001928839e-05,
+            0.0001590875083892218
+          ],
+          "forward_variance_step_bid_ask": [
+            1.849004760711196e-05,
+            0.00016058404737529528
+          ]
+        }
+      ],
+      "mean_width_ratio": 0.9078274412614565,
+      "min_width_ratio": 0.7258900300907362,
+      "expiries_needing_widening": 1,
+      "max_widening_index_points": 0.00403265546394682
+    }
+  },
+  "event_study": {
+    "period": [
+      "2022-05-16",
+      "2026-10-02"
+    ],
+    "last_vix1d_close": "2026-10-02",
+    "last_spx_close": "2026-10-02",
+    "bootstrap": {
+      "draws": 10000,
+      "seed": 0,
+      "interval": "95% percentile",
+      "event_days": "independent resampling of event days",
+      "ordinary_days": "circular block bootstrap, blocks of 20 sessions"
+    },
+    "events": {
+      "CPI": {
+        "n": 51,
+        "implied_var": 0.0002028128432525274,
+        "implied_var_lo": 0.00014768551079382373,
+        "implied_var_hi": 0.00026566069916052833,
+        "realised_var": 0.00021576421915845426,
+        "realised_var_lo": 9.609137982258122e-05,
+        "realised_var_hi": 0.00037330815945253254,
+        "premium_var": -1.2951375905926914e-05,
+        "premium_var_lo": -0.00014771678334453143,
+        "premium_var_hi": 9.191310450611558e-05,
+        "z_squared": 0.8294921119623402,
+        "z_squared_lo": 0.5332260434793284,
+        "z_squared_hi": 1.1810972750769453,
+        "realised_abs": 0.00974257643626511,
+        "realised_abs_lo": 0.0069788288670717905,
+        "realised_abs_hi": 0.012957222432491141,
+        "implied_abs": 0.010250460974743913,
+        "implied_abs_lo": 0.008991822334724665,
+        "implied_abs_hi": 0.011656264246338184,
+        "ratio": 1.0638587561725603,
+        "ratio_lo": 0.5360430438065045,
+        "ratio_hi": 1.7091582783607222,
+        "implied_sd_mean": 0.01284704765364737,
+        "share_exceeding_implied_sd": 0.27450980392156865,
+        "implied_multiple": 1.836852343158618,
+        "implied_multiple_95pct": [
+          1.238822332439769,
+          2.6472318384793954
+        ],
+        "realised_multiple": 2.259824814898615,
+        "realised_multiple_95pct": [
+          0.9731121277829836,
+          4.273886198970865
+        ],
+        "after_weekend_or_holiday": 0,
+        "premium_pct_sq": -0.12951375905926912,
+        "premium_pct_sq_95pct": [
+          -1.4771678334453142,
+          0.9191310450611558
+        ]
+      },
+      "FOMC": {
+        "n": 35,
+        "implied_var": 0.00016815766725455618,
+        "implied_var_lo": 0.00012417544640547579,
+        "implied_var_hi": 0.0002207222003611321,
+        "realised_var": 0.0001455413499781498,
+        "realised_var_lo": 8.449111496769043e-05,
+        "realised_var_hi": 0.00021824949049555702,
+        "premium_var": 2.2616317276406362e-05,
+        "premium_var_lo": -5.3519438776235906e-05,
+        "premium_var_hi": 8.961457821240573e-05,
+        "z_squared": 1.1282157062409823,
+        "z_squared_lo": 0.5487087331995462,
+        "z_squared_hi": 2.0030580120992645,
+        "realised_abs": 0.00930172861248312,
+        "realised_abs_lo": 0.00685449451195103,
+        "realised_abs_hi": 0.0119346930497423,
+        "implied_abs": 0.009642114918520127,
+        "implied_abs_lo": 0.008471052145162899,
+        "implied_abs_hi": 0.01094722200087879,
+        "ratio": 0.8655052865227375,
+        "ratio_lo": 0.5145304745236502,
+        "ratio_hi": 1.3488989210506575,
+        "implied_sd_mean": 0.012084598941001964,
+        "share_exceeding_implied_sd": 0.2857142857142857,
+        "implied_multiple": 1.522984443011942,
+        "implied_multiple_95pct": [
+          1.0417175016821865,
+          2.2001178140861914
+        ],
+        "realised_multiple": 1.5243396498143595,
+        "realised_multiple_95pct": [
+          0.828322722692688,
+          2.5645254617387705
+        ],
+        "after_weekend_or_holiday": 0,
+        "premium_pct_sq": 0.2261631727640636,
+        "premium_pct_sq_95pct": [
+          -0.5351943877623591,
+          0.8961457821240573
+        ]
+      },
+      "NFP": {
+        "n": 52,
+        "implied_var": 0.00015084769852575407,
+        "implied_var_lo": 0.00012467517251447111,
+        "implied_var_hi": 0.0001793769140027925,
+        "realised_var": 0.00020112116146352884,
+        "realised_var_lo": 9.685899736525332e-05,
+        "realised_var_hi": 0.00036923679481480495,
+        "premium_var": -5.027346293777477e-05,
+        "premium_var_lo": -0.0002046793369180653,
+        "premium_var_hi": 4.535660335973947e-05,
+        "z_squared": 1.1993447174776362,
+        "z_squared_lo": 0.656356917048814,
+        "z_squared_hi": 2.011185995459047,
+        "realised_abs": 0.010178232806003568,
+        "realised_abs_lo": 0.007791403091030954,
+        "realised_abs_hi": 0.013056017142475194,
+        "implied_abs": 0.009288398005734149,
+        "implied_abs_lo": 0.008469073133926874,
+        "implied_abs_hi": 0.010144014975563057,
+        "ratio": 1.3332729861250858,
+        "ratio_lo": 0.6959894448093807,
+        "ratio_hi": 2.314172542342616,
+        "implied_sd_mean": 0.011641280533599708,
+        "share_exceeding_implied_sd": 0.28846153846153844,
+        "implied_multiple": 1.3662100686203127,
+        "implied_multiple_95pct": [
+          1.0158291637938788,
+          1.8451246610102316
+        ],
+        "realised_multiple": 2.1064595105212325,
+        "realised_multiple_95pct": [
+          0.940288303815072,
+          4.160561460419462
+        ],
+        "after_weekend_or_holiday": 4,
+        "premium_pct_sq": -0.5027346293777477,
+        "premium_pct_sq_95pct": [
+          -2.046793369180653,
+          0.45356603359739467
+        ]
+      },
+      "CPI or FOMC (unique days)": {
+        "n": 85,
+        "implied_var": 0.00018945628650966556,
+        "implied_var_lo": 0.00015044838268319678,
+        "implied_var_hi": 0.0002327642400819587,
+        "realised_var": 0.0001885437649748114,
+        "realised_var_lo": 0.00011017676868036475,
+        "realised_var_hi": 0.00028630279371368375,
+        "premium_var": 9.125215348542054e-07,
+        "premium_var_lo": -8.326451837643288e-05,
+        "premium_var_hi": 7.15170444108735e-05,
+        "z_squared": 0.9555164027448977,
+        "z_squared_lo": 0.6371437347169054,
+        "z_squared_hi": 1.3575171922057268,
+        "realised_abs": 0.009576049088406436,
+        "realised_abs_lo": 0.007603147536950014,
+        "realised_abs_hi": 0.011821542760885187,
+        "implied_abs": 0.01001553140714055,
+        "implied_abs_lo": 0.009118610027433378,
+        "implied_abs_hi": 0.011014693860010397,
+        "ratio": 0.9951834718622145,
+        "ratio_lo": 0.6281849829601237,
+        "ratio_hi": 1.4457987129775332,
+        "implied_sd_mean": 0.012552607105296655,
+        "share_exceeding_implied_sd": 0.2823529411764706,
+        "implied_multiple": 1.715883561516378,
+        "implied_multiple_95pct": [
+          1.240430073603114,
+          2.3585581214717415
+        ],
+        "realised_multiple": 1.9747290836558347,
+        "realised_multiple_95pct": [
+          1.0796335882576757,
+          3.327645576028738
+        ],
+        "after_weekend_or_holiday": 0,
+        "premium_pct_sq": 0.009125215348542054,
+        "premium_pct_sq_95pct": [
+          -0.8326451837643288,
+          0.715170444108735
+        ]
+      }
+    },
+    "ordinary_days": {
+      "n": 963,
+      "implied_var": 0.00011041325341577217,
+      "implied_var_lo": 8.704902240473962e-05,
+      "implied_var_hi": 0.00013929484605041135,
+      "realised_var": 9.547829448369623e-05,
+      "realised_var_lo": 7.025619643053931e-05,
+      "realised_var_hi": 0.0001283429012026272,
+      "premium_var": 1.4934958932075931e-05,
+      "premium_var_lo": 6.002248646909899e-06,
+      "premium_var_hi": 2.3140492774222562e-05,
+      "z_squared": 0.8623834715820885,
+      "z_squared_lo": 0.7957907755295023,
+      "z_squared_hi": 0.933445301712845,
+      "ratio": 0.8647358132285364,
+      "ratio_lo": 0.7760944226728694,
+      "ratio_hi": 0.9507413945438922,
+      "implied_sd_mean": 0.009553013004771712,
+      "premium_pct_sq": 0.1493495893207593,
+      "premium_pct_sq_95pct": [
+        0.060022486469098996,
+        0.23140492774222562
+      ],
+      "bootstrap_sensitivity": {
+        "premium_pct_sq_95pct_by_block_length": {
+          "block_1": [
+            -0.040585366508332464,
+            0.3114719981960008
+          ],
+          "block_5": [
+            0.03195413805364393,
+            0.25252299644702897
+          ],
+          "block_20": [
+            0.060260701592771186,
+            0.23318211965790742
+          ],
+          "block_60": [
+            0.06709652000886182,
+            0.22614469134797413
+          ]
+        },
+        "premium_lag1_autocorrelation": -0.24218718916483523,
+        "note": "block_1 is the plain bootstrap of days; the premium series is negatively autocorrelated (implied variance reacts to the previous day's realised move), so resampling blocks gives a narrower interval than resampling single days"
+      }
+    }
+  }
+}
