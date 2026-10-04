@@ -12,14 +12,22 @@ from varclock.clock import SessionCalendar
 from varclock.synthetic import synthetic_daily_snapshot
 
 
+def _example(name: str) -> dict:
+    """Full Cboe fixture when available locally, otherwise the printed results only."""
+    try:
+        return load_example("cboe_full/" + name)
+    except FileNotFoundError:
+        return load_example(name)
+
+
 @pytest.fixture(scope="session")
 def vix_example() -> dict:
-    return load_example("cboe_vix_example.json")
+    return _example("cboe_vix_example.json")
 
 
 @pytest.fixture(scope="session")
 def vix1d_example() -> dict:
-    return load_example("cboe_vix1d_example.json")
+    return _example("cboe_vix1d_example.json")
 
 
 def sessions():

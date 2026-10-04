@@ -2,12 +2,19 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import numpy as np
 import pytest
 
 from helpers import example_curve, example_strip, example_time
 from varclock import tradingcal as tc
 from varclock.variance import interpolate_variance, single_term_variance
+
+pytestmark = pytest.mark.skipif(
+    not (Path(__file__).parent / "data" / "cboe_full" / "cboe_vix_example.json").exists(),
+    reason="Cboe option tables are not redistributed; see tests/data/cboe_vix_example.json",
+)
 
 
 @pytest.fixture(scope="module")

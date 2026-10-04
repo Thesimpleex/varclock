@@ -27,3 +27,4 @@ data/cache/
 .DS_Store
 .idea/
 .vscode/
+tests/data/cboe_full/
